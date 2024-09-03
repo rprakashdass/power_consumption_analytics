@@ -1,3 +1,21 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import 'package:flutter/material.dart';
 import 'report_menu.dart';
 // void main()
@@ -123,68 +141,68 @@ class MyAPPs extends StatelessWidget {
 }
 }
 
-// // class ReportMenu extends StatelessWidget {
-// //   const ReportMenu({super.key});
+// // // class ReportMenu extends StatelessWidget {
+// // //   const ReportMenu({super.key});
 
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return ListView(
-// //       children: <Widget>[
-// //         ExpansionTile(
-// //           leading: const Icon(
-// //             Icons.note_alt,
-// //             color: Color.fromARGB(255, 200, 236, 33),
-// //           ),
-// //           title: const Text(
-// //             'Report',
-// //             style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
-// //           ),
-// //           children: <Widget>[
-// //             ListTile(
-// //               leading: const Icon(Icons.assignment, color: Colors.yellow),
-// //               title: const Text('Reading Report'),
-// //               onTap: () {
-// //                 // Handle the tap for Reading Report
-// //               },
-// //             ),
-// //             ListTile(
-// //               leading: const Icon(Icons.pie_chart, color: Colors.yellow),
-// //               title: const Text('Consumption Report'),
-// //               onTap: () {
-// //                 // Handle the tap for Consumption Report
-// //               },
-// //             ),
-// //             ListTile(
-// //               leading: const Icon(Icons.bar_chart, color: Colors.yellow),
-// //               title: const Text('History Report'),
-// //               onTap: () {
-// //                 // Handle the tap for History Report
-// //               },
-// //             ),
-// //             ListTile(
-// //               leading: const Icon(Icons.notifications, color: Colors.yellow),
-// //               title: const Text('Notification Report'),
-// //               onTap: () {
-// //                 // Handle the tap for Notification Report
-// //               },
-// //             ),
-// //             ListTile(
-// //               leading: const Icon(Icons.warning, color: Colors.yellow),
-// //               title: const Text('Alert Report'),
-// //               onTap: () {
-// //                 // Handle the tap for Alert Report
-// //               },
-// //             ),
-// //           ],
-// //         ),
-// //         ListTile(
-// //           leading: const Icon(Icons.subscriptions, color: Colors.yellow),
-// //           title: const Text('Subscription'),
-// //           onTap: () {
-// //             // Handle the tap for Subscription
-// //           },
-// //         ),
-// //       ],
-// //     );
-// //   }
-// // }
+// // //   @override
+// // //   Widget build(BuildContext context) {
+// // //     return ListView(
+// // //       children: <Widget>[
+// // //         ExpansionTile(
+// // //           leading: const Icon(
+// // //             Icons.note_alt,
+// // //             color: Color.fromARGB(255, 200, 236, 33),
+// // //           ),
+// // //           title: const Text(
+// // //             'Report',
+// // //             style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
+// // //           ),
+// // //           children: <Widget>[
+// // //             ListTile(
+// // //               leading: const Icon(Icons.assignment, color: Colors.yellow),
+// // //               title: const Text('Reading Report'),
+// // //               onTap: () {
+// // //                 // Handle the tap for Reading Report
+// // //               },
+// // //             ),
+// // //             ListTile(
+// // //               leading: const Icon(Icons.pie_chart, color: Colors.yellow),
+// // //               title: const Text('Consumption Report'),
+// // //               onTap: () {
+// // //                 // Handle the tap for Consumption Report
+// // //               },
+// // //             ),
+// // //             ListTile(
+// // //               leading: const Icon(Icons.bar_chart, color: Colors.yellow),
+// // //               title: const Text('History Report'),
+// // //               onTap: () {
+// // //                 // Handle the tap for History Report
+// // //               },
+// // //             ),
+// // //             ListTile(
+// // //               leading: const Icon(Icons.notifications, color: Colors.yellow),
+// // //               title: const Text('Notification Report'),
+// // //               onTap: () {
+// // //                 // Handle the tap for Notification Report
+// // //               },
+// // //             ),
+// // //             ListTile(
+// // //               leading: const Icon(Icons.warning, color: Colors.yellow),
+// // //               title: const Text('Alert Report'),
+// // //               onTap: () {
+// // //                 // Handle the tap for Alert Report
+// // //               },
+// // //             ),
+// // //           ],
+// // //         ),
+// // //         ListTile(
+// // //           leading: const Icon(Icons.subscriptions, color: Colors.yellow),
+// // //           title: const Text('Subscription'),
+// // //           onTap: () {
+// // //             // Handle the tap for Subscription
+// // //           },
+// // //         ),
+// // //       ],
+// // //     );
+// // //   }
+// // // }

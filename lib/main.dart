@@ -3,8 +3,7 @@ import 'dashboard.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:power_consumption_analytics/report_menu.dart';
-// ignore: unused_import
-import 'navigate.dart';
+
 // import 'src/app.dart';
 // import 'src/settings/settings_controller.dart';
 // import 'src/settings/settings_service.dart';
@@ -18,11 +17,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       // ignore: unnecessary_const
-      home: const DashboardScreen()
-      //  SafeArea(
+      home: DashboardScreen()
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+  
+//       //  SafeArea(
 //         child: Scaffold(
 //           appBar: AppBar(
 //           title: const Text('Power cunsumption',
@@ -64,9 +76,9 @@ class MyApp extends StatelessWidget {
       
 //       );
 // }
-);
-}
-}
+// );
+// }
+// }
 
 
 
