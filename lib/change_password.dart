@@ -14,17 +14,24 @@ class ChangePassword extends State<PasswordChangeScreen> {
   bool visible_1 = false;
   bool visible_2 = false;
   bool visible_3 = false;
+  String oldPassword = "";
   String password = "";
+  String newPassword = "";
+  String confirmPassword = "";
+
+  TextEditingController tc_1 = TextEditingController();
+  TextEditingController tc_2 = TextEditingController();
+  TextEditingController tc_3 = TextEditingController();
 
   void validatePassword(
       String oldPassword, String newPassword, String confirmPassword) {
-    if (password != oldPassword) {
+    if (oldPassword == "" || newPassword == "" || confirmPassword == "") {
+      print("the password can't be empty");
+    } else if (password != oldPassword) {
       print("the old password doesn't match");
-    }
-    if (newPassword != confirmPassword) {
+    } else if (newPassword != confirmPassword) {
       print("New password and the confirm password are different");
-    }
-    if (oldPassword == newPassword) {
+    } else if (oldPassword == newPassword) {
       print("Old password and new password are same");
     }
   }
@@ -79,9 +86,11 @@ class ChangePassword extends State<PasswordChangeScreen> {
             const Text(
               "Old Password ",
               style: TextStyle(fontSize: 18),
+              // oldPassword=tc.text;
             ),
             // textBox(visible_1),
             TextField(
+              controller: tc_1,
               obscureText: !visible_1,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.all(10),
@@ -102,6 +111,7 @@ class ChangePassword extends State<PasswordChangeScreen> {
             ),
 
             const Padding(padding: EdgeInsets.all(8.0)),
+
             const Text(
               "New Password",
               style: TextStyle(fontSize: 18),
@@ -109,6 +119,7 @@ class ChangePassword extends State<PasswordChangeScreen> {
             // textBox(visible_2),
             TextField(
               obscureText: !visible_2,
+              controller: tc_2,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.all(10),
                 border: const OutlineInputBorder(
@@ -136,6 +147,7 @@ class ChangePassword extends State<PasswordChangeScreen> {
             // textBox(visible_3),
             TextField(
               obscureText: !visible_3,
+              controller: tc_3,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.all(10),
                 border: const OutlineInputBorder(
@@ -157,7 +169,15 @@ class ChangePassword extends State<PasswordChangeScreen> {
             const Padding(padding: EdgeInsets.all(10.0)),
 
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // print(tc.text);
+                  oldPassword = tc_1.text;
+                  newPassword = tc_2.text;
+                  confirmPassword = tc_3.text;
+
+                  validatePassword(oldPassword, newPassword, confirmPassword);
+                  // tc.clear();
+                },
                 style: const ButtonStyle(
                   padding: WidgetStatePropertyAll(
                       EdgeInsets.only(top: 10, bottom: 10)),
