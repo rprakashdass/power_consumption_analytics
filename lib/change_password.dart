@@ -11,10 +11,12 @@ class PasswordChangeScreen extends StatefulWidget {
 }
 
 class ChangePassword extends State<PasswordChangeScreen> {
-  bool visible = false;
+  bool visible_1 = false;
+  bool visible_2 = false;
+  bool visible_3 = false;
   String password = "";
 
-  void validatePasswordd(
+  void validatePassword(
       String oldPassword, String newPassword, String confirmPassword) {
     if (password != oldPassword) {
       print("the old password doesn't match");
@@ -27,26 +29,26 @@ class ChangePassword extends State<PasswordChangeScreen> {
     }
   }
 
-  TextField textBox() {
-    return TextField(
-      obscureText: !visible,
-      decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(10),
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-        ),
-        suffixIcon: IconButton(
-          icon:
-              Icon(visible ? Icons.visibility : Icons.visibility_off_outlined),
-          onPressed: () {
-            setState(() {
-              visible = !visible;
-            });
-          },
-        ),
-      ),
-    );
-  }
+  // TextField textBox(visible) {
+  //   return TextField(
+  //     obscureText: !visible,
+  //     decoration: InputDecoration(
+  //       contentPadding: const EdgeInsets.all(10),
+  //       border: const OutlineInputBorder(
+  //         borderRadius: BorderRadius.all(Radius.circular(8)),
+  //       ),
+  //       suffixIcon: IconButton(
+  //         icon:
+  //             Icon(visible ? Icons.visibility : Icons.visibility_off_outlined),
+  //         onPressed: () {
+  //           setState(() {
+  //             visible = !visible;
+  //           });
+  //         },
+  //       ),
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -78,21 +80,80 @@ class ChangePassword extends State<PasswordChangeScreen> {
               "Old Password ",
               style: TextStyle(fontSize: 18),
             ),
-            textBox(),
+            // textBox(visible_1),
+            TextField(
+              obscureText: !visible_1,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(10),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(visible_1
+                      ? Icons.visibility
+                      : Icons.visibility_off_outlined),
+                  onPressed: () {
+                    setState(() {
+                      visible_1 = !visible_1;
+                    });
+                  },
+                ),
+              ),
+            ),
+
             const Padding(padding: EdgeInsets.all(8.0)),
-            // TextBox.fromLTRBD(2, 3, 2, 3,TextDirection.ltr),
             const Text(
               "New Password",
               style: TextStyle(fontSize: 18),
             ),
-            textBox(),
+            // textBox(visible_2),
+            TextField(
+              obscureText: !visible_2,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(10),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(visible_2
+                      ? Icons.visibility
+                      : Icons.visibility_off_outlined),
+                  onPressed: () {
+                    setState(() {
+                      visible_2 = !visible_2;
+                    });
+                  },
+                ),
+              ),
+            ),
+
             const Padding(padding: EdgeInsets.all(8.0)),
 
             const Text(
               "Confirm New Password",
               style: TextStyle(fontSize: 18),
             ),
-            textBox(),
+            // textBox(visible_3),
+            TextField(
+              obscureText: !visible_3,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(10),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(visible_3
+                      ? Icons.visibility
+                      : Icons.visibility_off_outlined),
+                  onPressed: () {
+                    setState(() {
+                      visible_3 = !visible_3;
+                    });
+                  },
+                ),
+              ),
+            ),
+
             const Padding(padding: EdgeInsets.all(10.0)),
 
             ElevatedButton(
