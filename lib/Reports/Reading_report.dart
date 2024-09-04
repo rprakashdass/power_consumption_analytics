@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:power_consumption_analytics/Reports/hero_dialog_route.dart';
+import 'package:power_consumption_analytics/Reports/filter.dart';
 import 'package:power_consumption_analytics/drawer.dart';
 
 
@@ -64,6 +64,7 @@ class reading_report extends StatelessWidget {
   ];
 
   reading_report({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,24 +93,21 @@ class reading_report extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    // Handle filter action
-                    print("filter tapped");
-                    AddTodoButton();
-                  },
                   style: TextButton.styleFrom(
-                    foregroundColor: const Color.fromARGB(255, 1, 202, 199),
-                  ),
-                  child: Text('Filter'),
+                    foregroundColor: const Color.fromARGB(255, 1, 202, 199),),
+                  onPressed: () { 
+                    _showFilterDialog(context);
+                  },
+                  child: const Text('Filter',)
                 ),
                 TextButton(
                   onPressed: () {
                     // Handle download action
                   },
                   style: TextButton.styleFrom(
-                    foregroundColor: Colors.white, backgroundColor: Colors.teal,
+                    foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 1, 202, 199),
                   ),
-                  child: Text('Download'),
+                  child: const Text('Download'),
                 ),
               ],
             ),
@@ -186,4 +184,42 @@ class reading_report extends StatelessWidget {
       ),
     );
   }
+ void _showFilterDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: const Text('Reading Report Filter'), // Title of the dialog
+        content: Read_FilterDialogContent(), // Your custom content widget
+        actions: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); 
+                },
+                child: const Text('Cancel',
+                style: TextStyle(color: Color.fromARGB(255, 1, 202, 199),
+                )
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // Handle the submission logic here
+                  // For example, apply the filters
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Submit',
+                style: TextStyle(color: Color.fromARGB(255, 1, 202, 199),
+                )
+                ),
+              ),
+            ],
+          ),
+        ],
+      );
+    },
+  );
+}
 }

@@ -51,7 +51,7 @@ class device_manager extends StatelessWidget {
                       foregroundColor: Colors.white,
                       backgroundColor: const Color.fromARGB(255, 1, 202, 199),
                     ),
-                    child: Text('Add Device'),
+                    child: const Text('Add Device'),
                   ),
                 ],
               ),

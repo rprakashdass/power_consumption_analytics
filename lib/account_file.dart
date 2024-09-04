@@ -80,8 +80,7 @@ class AccountPage extends StatelessWidget {
           ),
           Container(
             // List<int> x=get_color(name),
-            padding:
-                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding: const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
                 // list<int> x=get_color(n),
@@ -133,8 +132,8 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding:
-                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding: const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+
             child: TextField(
               decoration: InputDecoration(
                 fillColor: const Color.fromARGB(115, 181, 181, 183),
@@ -184,8 +183,7 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding:
-                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding: const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
                 fillColor: const Color.fromARGB(115, 181, 181, 183),
@@ -235,8 +233,7 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding:
-                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding:const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
                 fillColor: const Color.fromARGB(115, 181, 181, 183),
@@ -286,8 +283,7 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding:
-                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding: const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
                 fillColor: const Color.fromARGB(115, 181, 181, 183),
@@ -337,8 +333,7 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding:
-                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding: const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
                 fillColor: const Color.fromARGB(115, 181, 181, 183),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/drawer.dart';
 
 class Subscription extends StatelessWidget {
+  const Subscription({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +13,7 @@ class Subscription extends StatelessWidget {
           size: 35,
           color: Colors.white,
         ),
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white, // Set the drawer menu icon color to white
         ),
         centerTitle: true,
@@ -23,7 +25,7 @@ class Subscription extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 1, 202, 199),
+        backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: const [
           Padding(
               padding: EdgeInsets.only(right: 15),
@@ -40,11 +42,11 @@ class Subscription extends StatelessWidget {
             const EdgeInsets.only(top: 25, bottom: 30, left: 15, right: 15),
         children: [
           Container(
-            padding: EdgeInsets.only(bottom: 10),
-            margin: EdgeInsets.only(
+            padding: const EdgeInsets.only(bottom: 10),
+            margin: const EdgeInsets.only(
               bottom: 30,
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               color: Color.fromARGB(255, 255, 255, 255),
               boxShadow: [
@@ -60,14 +62,15 @@ class Subscription extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
                     color: Colors.teal,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(8),
                       topRight: Radius.circular(8),
                     ),
                   ),
+                  width: 700,
                   child: Center(
                     child: Text(
                       // padding: EdgeInsets.only(top: 10, bottom: 10),
@@ -78,57 +81,56 @@ class Subscription extends StatelessWidget {
                           color: Colors.white),
                     ),
                   ),
-                  width: 700,
                 ),
                 Padding(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Center(
+                        const Center(
                             child: Text(
                           "\$ 4999.00(12 month)",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         )),
-                        Padding(padding: EdgeInsets.only(bottom: 8)),
-                        Text(
+                        const Padding(padding: EdgeInsets.only(bottom: 8)),
+                        const Text(
                           "🌟 An Premium Plan",
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
-                        Text(
+                        const Text(
                           "🌟 Affordable Price",
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
-                        Text(
+                        const Text(
                           "🌟 416/Month (1000 less than Lite Plan)",
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
-                        Text(
+                        const Text(
                           "🌟 12 Months Validity...",
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
                         // TextStyle(fontSize: 20),
-                        Padding(padding: EdgeInsets.only(top: 12)),
+                        const Padding(padding: EdgeInsets.only(top: 12)),
                         ElevatedButton(
                           iconAlignment: IconAlignment.end,
                           onPressed: () {},
-                          child: Text(
-                            "select",
-                            style: TextStyle(color: Colors.white),
-                          ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.teal,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
+                          ),
+                          child: Text(
+                            "select",
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ],
@@ -137,9 +139,9 @@ class Subscription extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10),
-            margin: EdgeInsets.only(bottom: 10),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.only(bottom: 10),
+            margin: const EdgeInsets.only(bottom: 10),
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               color: Color.fromARGB(255, 255, 255, 255),
               boxShadow: [
@@ -155,14 +157,15 @@ class Subscription extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
                     color: Colors.teal,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(8),
                       topRight: Radius.circular(8),
                     ),
                   ),
+                  width: 700,
                   child: Center(
                     child: Text(
                       // padding: EdgeInsets.only(top: 10, bottom: 10),
@@ -173,52 +176,51 @@ class Subscription extends StatelessWidget {
                           color: Colors.white),
                     ),
                   ),
-                  width: 700,
                 ),
                 Padding(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Center(
+                        const Center(
                             child: Text(
                           "\$ 500.00(1 month)",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         )),
-                        Padding(padding: EdgeInsets.only(bottom: 8)),
-                        Text(
+                        const Padding(padding: EdgeInsets.only(bottom: 8)),
+                        const Text(
                           "🌟 An Basic Plan",
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
-                        Text(
+                        const Text(
                           "🌟 Standard Price",
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
 
-                        Text(
+                        const Text(
                           "🌟 1 Month Validity",
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
                         // TextStyle(fontSize: 20),
-                        Padding(padding: EdgeInsets.only(top: 12)),
+                        const Padding(padding: EdgeInsets.only(top: 12)),
                         ElevatedButton(
                           iconAlignment: IconAlignment.end,
                           onPressed: () {},
-                          child: Text(
-                            "select",
-                            style: TextStyle(color: Colors.white),
-                          ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.teal,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
+                          ),
+                          child: Text(
+                            "select",
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ],
