@@ -17,10 +17,10 @@ class _ToggleCardState extends State<ToggleCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         width: 174,
         height: 120,
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             // color: status?Colors.green:Colors.red,
             color: Colors.white,
@@ -32,7 +32,7 @@ class _ToggleCardState extends State<ToggleCard> {
             boxShadow: const [
               BoxShadow(
                 color: Color.fromARGB(255, 242, 238, 238),
-                offset: Offset(-1.0,-1.0),
+                offset: Offset(-1.0, -1.0),
                 blurRadius: 1,
                 spreadRadius: 1.0,
               ),
@@ -44,37 +44,38 @@ class _ToggleCardState extends State<ToggleCard> {
               height: 1.0,
               width: 4.0,
             ),
-        Padding(
-  padding: const EdgeInsets.all(1.8),
-  child: Stack(
-    alignment: Alignment.center,
-    children: [
-      Switch(
-        inactiveThumbColor: Colors.white,
-        inactiveTrackColor: Colors.red,
-        activeTrackColor: const Color.fromARGB(214, 10, 246, 69),
-        value: status,
-        onChanged: (value) {
-          setState(() {
-            status = value;
-          });
-        },
-      ),
-      Positioned(
-        left: status ? 10.10 : 30.0, // Adjust based on the thumb's position
-        child: Text(
-          status ? 'ON' : 'OFF',
-          style: const TextStyle(
-            color: Color.fromARGB(255, 244, 241, 241),
-            fontSize: 11,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    ],
-  ),
-),
-
+            Padding(
+              padding: const EdgeInsets.all(1.8),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Switch(
+                    inactiveThumbColor: Colors.white,
+                    inactiveTrackColor: Colors.red,
+                    activeTrackColor: const Color.fromARGB(214, 10, 246, 69),
+                    value: status,
+                    onChanged: (value) {
+                      setState(() {
+                        status = value;
+                      });
+                    },
+                  ),
+                  Positioned(
+                    left: status
+                        ? 10.10
+                        : 30.0, // Adjust based on the thumb's position
+                    child: Text(
+                      status ? 'ON' : 'OFF',
+                      style: const TextStyle(
+                        color: Color.fromARGB(255, 244, 241, 241),
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ));
   }

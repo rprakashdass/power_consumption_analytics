@@ -1,14 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// ignore_for_file: non_constant_identifier_names
 
+import 'package:flutter/material.dart';
+
+// ignore: must_be_immutable
 class AccountPage extends StatelessWidget {
-  @override
   String name = "admin";
   String user_name = "admin2024";
   String user_email = "adminge@gmail.com";
   String mobile_num = "7708049840";
   String create_date = "2024-06-01 15:39:54 PM";
   String alt_mob_no = "";
+
+  AccountPage({super.key});
 
   String val(String n, String m) {
     if (n != "") return n;
@@ -20,6 +23,7 @@ class AccountPage extends StatelessWidget {
     return [229, 8, 8, 8];
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -50,18 +54,18 @@ class AccountPage extends StatelessWidget {
           // ),
           Container(
             // transformAlignment: Alignment.center,
+            padding: const EdgeInsets.only(bottom: 10, top: 10),
+            // transformAlignment: Alignment.center,
             child: const Icon(
               Icons.person,
               color: Color.fromARGB(243, 90, 195, 190),
               size: 150,
             ),
-
-            padding: EdgeInsets.only(bottom: 10, top: 10),
           ),
 
           Container(
-            padding: EdgeInsets.only(bottom: 5, top: 5, left: 0),
-            child: Row(
+            padding: const EdgeInsets.only(bottom: 5, top: 5, left: 0),
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
@@ -76,19 +80,20 @@ class AccountPage extends StatelessWidget {
           ),
           Container(
             // List<int> x=get_color(name),
-            padding: EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding:
+                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
                 // list<int> x=get_color(n),
-                fillColor: Color.fromARGB(115, 181, 181, 183),
+                fillColor: const Color.fromARGB(115, 181, 181, 183),
                 filled: true,
                 enabled: false,
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   gapPadding: 6,
                   // borderSide: BorderSide(color: Colors.transparent, width: 0.0),
                 ),
-                disabledBorder: OutlineInputBorder(
+                disabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(
                       13)), // Same border radius as enabled border
                   borderSide: BorderSide(
@@ -113,8 +118,8 @@ class AccountPage extends StatelessWidget {
           ),
 
           Container(
-            padding: EdgeInsets.only(bottom: 5, top: 5),
-            child: Row(
+            padding: const EdgeInsets.only(bottom: 5, top: 5),
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
@@ -128,18 +133,19 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding:
+                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
-                fillColor: Color.fromARGB(115, 181, 181, 183),
+                fillColor: const Color.fromARGB(115, 181, 181, 183),
                 filled: true,
                 enabled: false,
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   gapPadding: 6,
                   // borderSide: BorderSide(color: Colors.transparent, width: 0.0),
                 ),
-                disabledBorder: OutlineInputBorder(
+                disabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(
                       13)), // Same border radius as enabled border
                   borderSide: BorderSide(
@@ -163,8 +169,8 @@ class AccountPage extends StatelessWidget {
           ),
 
           Container(
-            padding: EdgeInsets.only(bottom: 5, top: 5),
-            child: Row(
+            padding: const EdgeInsets.only(bottom: 5, top: 5),
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
@@ -178,18 +184,19 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding:
+                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
-                fillColor: Color.fromARGB(115, 181, 181, 183),
+                fillColor: const Color.fromARGB(115, 181, 181, 183),
                 filled: true,
                 enabled: false,
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   gapPadding: 6,
                   // borderSide: BorderSide(color: Colors.transparent, width: 0.0),
                 ),
-                disabledBorder: OutlineInputBorder(
+                disabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(
                       13)), // Same border radius as enabled border
                   borderSide: BorderSide(
@@ -213,8 +220,8 @@ class AccountPage extends StatelessWidget {
           ),
 
           Container(
-            padding: EdgeInsets.only(bottom: 5, top: 5),
-            child: Row(
+            padding: const EdgeInsets.only(bottom: 5, top: 5),
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
@@ -228,18 +235,19 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding:
+                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
-                fillColor: Color.fromARGB(115, 181, 181, 183),
+                fillColor: const Color.fromARGB(115, 181, 181, 183),
                 filled: true,
                 enabled: false,
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   gapPadding: 6,
                   // borderSide: BorderSide(color: Colors.transparent, width: 0.0),
                 ),
-                disabledBorder: OutlineInputBorder(
+                disabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(
                       13)), // Same border radius as enabled border
                   borderSide: BorderSide(
@@ -263,8 +271,8 @@ class AccountPage extends StatelessWidget {
           ),
 
           Container(
-            padding: EdgeInsets.only(bottom: 5, top: 5),
-            child: Row(
+            padding: const EdgeInsets.only(bottom: 5, top: 5),
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
@@ -278,18 +286,19 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding:
+                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
-                fillColor: Color.fromARGB(115, 181, 181, 183),
+                fillColor: const Color.fromARGB(115, 181, 181, 183),
                 filled: true,
                 enabled: false,
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   gapPadding: 6,
                   // borderSide: BorderSide(color: Colors.transparent, width: 0.0),
                 ),
-                disabledBorder: OutlineInputBorder(
+                disabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(
                       13)), // Same border radius as enabled border
                   borderSide: BorderSide(
@@ -313,8 +322,8 @@ class AccountPage extends StatelessWidget {
           ),
 
           Container(
-            padding: EdgeInsets.only(bottom: 5, top: 5),
-            child: Row(
+            padding: const EdgeInsets.only(bottom: 5, top: 5),
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
@@ -328,18 +337,19 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
+            padding:
+                const EdgeInsets.only(top: 2, bottom: 25, right: 3, left: 15),
             child: TextField(
               decoration: InputDecoration(
-                fillColor: Color.fromARGB(115, 181, 181, 183),
+                fillColor: const Color.fromARGB(115, 181, 181, 183),
                 filled: true,
                 enabled: false,
-                border: OutlineInputBorder(
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   gapPadding: 6,
                   // borderSide: BorderSide(color: Colors.transparent, width: 0.0),
                 ),
-                disabledBorder: OutlineInputBorder(
+                disabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(
                       13)), // Same border radius as enabled border
                   borderSide: BorderSide(

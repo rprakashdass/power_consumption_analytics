@@ -1,27 +1,29 @@
 // import 'report_menu.dart';
+import 'package:power_consumption_analytics/account_file.dart';
+
 import 'dashboard.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:power_consumption_analytics/report_menu.dart';
 
-// import 'src/app.dart';
-// import 'src/settings/settings_controller.dart';
-// import 'src/settings/settings_service.dart';
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // ignore: unnecessary_const
-      home: DashboardScreen()
-    );
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => AccountPage(),
+          '/settings': (context) => DashboardScreen(),
+        },
+        // ignore: unnecessary_const
+        home: DashboardScreen());
   }
 }
 

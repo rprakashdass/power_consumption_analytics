@@ -1,15 +1,17 @@
+// ignore_for_file: file_names, camel_case_types, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/drawer.dart';
 
 class consumption_report extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
     {
-      "date":"2024-09-02",
+      "date": "2024-09-02",
       "Start Reading (Kwh)": "13785.3",
       "Today Consumption (Kwh)": "418.82",
     },
     {
-      "date":"2024-09-01",
+      "date": "2024-09-01",
       "Start Reading (Kwh)": "13752.11",
       "Today Consumption (Kwh)": "33.19",
     },
@@ -25,7 +27,7 @@ class consumption_report extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications,size:30),
+            icon: const Icon(Icons.notifications, size: 30),
             color: Colors.white,
             onPressed: () {},
           ),
@@ -52,16 +54,17 @@ class consumption_report extends StatelessWidget {
                   style: TextButton.styleFrom(
                     foregroundColor: const Color.fromARGB(255, 1, 202, 199),
                   ),
-                  child: Text('Filter'),
+                  child: const Text('Filter'),
                 ),
                 TextButton(
                   onPressed: () {
                     // Handle download action
                   },
                   style: TextButton.styleFrom(
-                    foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 1, 202, 199),
+                    foregroundColor: Colors.white,
+                    backgroundColor: const Color.fromARGB(255, 1, 202, 199),
                   ),
-                  child: Text('Download'),
+                  child: const Text('Download'),
                 ),
               ],
             ),
@@ -72,66 +75,75 @@ class consumption_report extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final item = data[index];
                   return GestureDetector(
-                    onTap: (){
-                      print("Consumption tap");
-                    },
-                  child: Card(
-                    margin: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 8),
-                          Row(
-                            // color:Colors.blue,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      onTap: () {
+                        print("Consumption tap");
+                      },
+                      child: Card(
+                        margin: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("${item['date']}",
-                              style:const TextStyle(fontWeight: FontWeight.bold,color:Color.fromARGB(255, 1, 202, 199))),
-                            ]
-                          ),    
-                          const Divider(),
-                          const SizedBox(height: 8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Start Reading (Kwh)     : ${item['Start Reading (Kwh)']}"),
+                              const SizedBox(height: 8),
+                              Row(
+                                  // color:Colors.blue,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("${item['date']}",
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Color.fromARGB(
+                                                255, 1, 202, 199))),
+                                  ]),
+                              const Divider(),
+                              const SizedBox(height: 8),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      "Start Reading (Kwh)     : ${item['Start Reading (Kwh)']}"),
+                                ],
+                              ),
+                              const SizedBox(height: 8),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      "Today Consumption (Kwh)     : ${item['Today Consumption (Kwh)']}"),
+                                ],
+                              ),
+                              const SizedBox(height: 8),
+                              const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("Pin1      : -"),
+                                ],
+                              ),
+                              const SizedBox(height: 4),
+                              const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("Pin2      : -"),
+                                ],
+                              ),
+                              const SizedBox(height: 4),
+                              const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("Pin3      : -"),
+                                ],
+                              ),
                             ],
                           ),
-                          const SizedBox(height: 8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Today Consumption (Kwh)     : ${item['Today Consumption (Kwh)']}"),
-                            ],
-                            
-                          ),
-                          const SizedBox(height: 8),
-                          const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Pin1      : -"),
-                            ],
-                          ),
-                          const SizedBox(height: 4),
-                          const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Pin2      : -"),
-                            ],
-                          ),
-                          const SizedBox(height: 4),
-                          const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Pin3      : -"),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ));
+                        ),
+                      ));
                 },
               ),
             ),

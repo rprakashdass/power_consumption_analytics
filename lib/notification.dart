@@ -50,13 +50,16 @@ class _NotiFyState extends State<NotiFy> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ToggleCard(title: 'High Voltage',),
-                      ToggleCard(title: 'Low Voltage',)
+                      ToggleCard(
+                        title: 'High Voltage',
+                      ),
+                      ToggleCard(
+                        title: 'Low Voltage',
+                      )
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-
                     children: [
                       ToggleCard(title: 'Poor Power Factor'),
                       ToggleCard(title: 'Power Failure')
@@ -64,10 +67,13 @@ class _NotiFyState extends State<NotiFy> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-
                     children: [
-                      ToggleCard(title: 'Communication Fail',),
-                      ToggleCard(title: 'Negetive Consumed Value',)
+                      ToggleCard(
+                        title: 'Communication Fail',
+                      ),
+                      ToggleCard(
+                        title: 'Negetive Consumed Value',
+                      )
                     ],
                   )
                 ],
