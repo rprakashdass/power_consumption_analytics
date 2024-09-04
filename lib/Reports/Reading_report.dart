@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_1/drawer.dart';
+import 'package:power_consumption_analytics/Reports/hero_dialog_route.dart';
+import 'package:power_consumption_analytics/drawer.dart';
 
 
 class reading_report extends StatelessWidget {
@@ -61,14 +62,16 @@ class reading_report extends StatelessWidget {
     },
     // Add more data here...
   ];
+
+  reading_report({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 1, 202, 199),
+        backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications,size: 30,),
+            icon: const Icon(Icons.notifications,size: 30,),
             color: Colors.white,
             onPressed: () {},
           ),
@@ -80,35 +83,37 @@ class reading_report extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Reading Report',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
                   onPressed: () {
                     // Handle filter action
+                    print("filter tapped");
+                    AddTodoButton();
                   },
-                  child: Text('Filter'),
                   style: TextButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 1, 202, 199),
+                    foregroundColor: const Color.fromARGB(255, 1, 202, 199),
                   ),
+                  child: Text('Filter'),
                 ),
                 TextButton(
                   onPressed: () {
                     // Handle download action
                   },
-                  child: Text('Download'),
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.white, backgroundColor: Colors.teal,
                   ),
+                  child: Text('Download'),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
                 itemCount: data.length,
@@ -119,7 +124,7 @@ class reading_report extends StatelessWidget {
                       print("Tapped");
                     },
                   child: Card(
-                    margin: EdgeInsets.symmetric(vertical: 8.0),
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                     child: Column(
@@ -127,9 +132,9 @@ class reading_report extends StatelessWidget {
                         children: [
                           Text(
                             "Date: ${item['date']}",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -137,9 +142,9 @@ class reading_report extends StatelessWidget {
                               Text("Consumed (kWh): ${item['consumed']}"),
                             ],
                           ),
-                          SizedBox(height: 8),
-                          Divider(),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
+                          const Divider(),
+                          const SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -153,7 +158,7 @@ class reading_report extends StatelessWidget {
                                   )),
                             ],
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -161,7 +166,7 @@ class reading_report extends StatelessWidget {
                               Text("LV Alert: ${item['lvAlert']} "),
                             ],
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

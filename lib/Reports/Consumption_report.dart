@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_1/drawer.dart';
+import 'package:power_consumption_analytics/drawer.dart';
 
 class consumption_report extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
@@ -16,14 +16,16 @@ class consumption_report extends StatelessWidget {
     // Add more data here...
   ];
 
+  consumption_report({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 1, 202, 199),
+        backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications,size:30),
+            icon: const Icon(Icons.notifications,size:30),
             color: Colors.white,
             onPressed: () {},
           ),
@@ -35,11 +37,11 @@ class consumption_report extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Consumption Report',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -47,23 +49,23 @@ class consumption_report extends StatelessWidget {
                   onPressed: () {
                     // Handle filter action
                   },
-                  child: Text('Filter'),
                   style: TextButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 1, 202, 199),
+                    foregroundColor: const Color.fromARGB(255, 1, 202, 199),
                   ),
+                  child: Text('Filter'),
                 ),
                 TextButton(
                   onPressed: () {
                     // Handle download action
                   },
-                  child: Text('Download'),
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255, 1, 202, 199),
                   ),
+                  child: Text('Download'),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
                 itemCount: data.length,
@@ -74,30 +76,30 @@ class consumption_report extends StatelessWidget {
                       print("Consumption tap");
                     },
                   child: Card(
-                    margin: EdgeInsets.symmetric(vertical: 8.0),
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Row(
                             // color:Colors.blue,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("${item['date']}",
-                              style:TextStyle(fontWeight: FontWeight.bold,color:Color.fromARGB(255, 1, 202, 199))),
+                              style:const TextStyle(fontWeight: FontWeight.bold,color:Color.fromARGB(255, 1, 202, 199))),
                             ]
                           ),    
-                          Divider(),
-                          SizedBox(height: 8),
+                          const Divider(),
+                          const SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("Start Reading (Kwh)     : ${item['Start Reading (Kwh)']}"),
                             ],
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -105,22 +107,22 @@ class consumption_report extends StatelessWidget {
                             ],
                             
                           ),
-                          SizedBox(height: 8),
-                          Row(
+                          const SizedBox(height: 8),
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("Pin1      : -"),
                             ],
                           ),
-                          SizedBox(height: 4),
-                          Row(
+                          const SizedBox(height: 4),
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("Pin2      : -"),
                             ],
                           ),
-                          SizedBox(height: 4),
-                          Row(
+                          const SizedBox(height: 4),
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("Pin3      : -"),

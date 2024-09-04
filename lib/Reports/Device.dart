@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_1/drawer.dart';
+import 'package:power_consumption_analytics/drawer.dart';
 
 class device_manager extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
@@ -15,20 +15,22 @@ class device_manager extends StatelessWidget {
     },
     // Add more data here...
   ];
+
+  device_manager({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Color.fromARGB(255, 1, 202, 199),
+      appBar: AppBar(backgroundColor: const Color.fromARGB(255, 1, 202, 199),
       actions: [
         IconButton(onPressed: (){},
-        icon:Icon(Icons.notifications,size:30),
+        icon:const Icon(Icons.notifications,size:30),
         color: Colors.white,
         )
       ],
       ),
       drawer: main_drawer(),
       body: 
-      Padding(padding: EdgeInsets.all(16.0),
+      Padding(padding: const EdgeInsets.all(16.0),
       child :
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,12 +43,12 @@ class device_manager extends StatelessWidget {
                   onPressed: () {
                     // Handle download action
                   },
-                  child: Text('Add Device'),
                   style: TextButton.styleFrom(
-                    shape: ContinuousRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20),
+                    shape: const ContinuousRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20),
                     )),
-                    foregroundColor: Colors.white, backgroundColor: Color.fromARGB(255,1,202,199),
+                    foregroundColor: Colors.white, backgroundColor: const Color.fromARGB(255,1,202,199),
                   ),
+                  child: Text('Add Device'),
                 ),
               ],
             ),
