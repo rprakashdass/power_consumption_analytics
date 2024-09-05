@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:power_consumption_analytics/drawer.dart';
 import 'package:power_consumption_analytics/widgets/toggle_card.dart';
 
 class NotiFy extends StatefulWidget {
@@ -16,9 +17,11 @@ class _NotiFyState extends State<NotiFy> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.white, size: 30),
           backgroundColor: const Color.fromARGB(255, 1, 202, 199),
           title: const Center(child: Text('Notification Settings')),
         ),
+        drawer: main_drawer(context),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(

@@ -8,11 +8,6 @@ class Subscription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.menu,
-          size: 35,
-          color: Colors.white,
-        ),
         iconTheme: const IconThemeData(
           color: Colors.white, // Set the drawer menu icon color to white
         ),
@@ -36,7 +31,7 @@ class Subscription extends StatelessWidget {
               ))
         ],
       ),
-      drawer: main_drawer(),
+      drawer: main_drawer(context),
       body: ListView(
         padding:
             const EdgeInsets.only(top: 25, bottom: 30, left: 15, right: 15),
@@ -71,7 +66,7 @@ class Subscription extends StatelessWidget {
                     ),
                   ),
                   width: 700,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       // padding: EdgeInsets.only(top: 10, bottom: 10),
                       "M Power Pro",
@@ -128,7 +123,7 @@ class Subscription extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                           ),
-                          child: Text(
+                          child: const Text(
                             "select",
                             style: TextStyle(color: Colors.white),
                           ),
@@ -166,7 +161,7 @@ class Subscription extends StatelessWidget {
                     ),
                   ),
                   width: 700,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       // padding: EdgeInsets.only(top: 10, bottom: 10),
                       "M Power Lite",
@@ -218,7 +213,7 @@ class Subscription extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                           ),
-                          child: Text(
+                          child: const Text(
                             "select",
                             style: TextStyle(color: Colors.white),
                           ),

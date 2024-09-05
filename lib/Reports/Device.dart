@@ -30,7 +30,7 @@ class device_manager extends StatelessWidget {
           )
         ],
       ),
-      drawer: main_drawer(),
+      drawer: main_drawer(context),
       body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(

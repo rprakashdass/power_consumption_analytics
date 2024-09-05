@@ -11,42 +11,52 @@ class PasswordChangeScreen extends StatefulWidget {
 }
 
 class ChangePassword extends State<PasswordChangeScreen> {
-  bool visible = false;
+  bool visible_1 = false;
+  bool visible_2 = false;
+  bool visible_3 = false;
+  String oldPassword = "";
   String password = "";
+  String newPassword = "";
+  String confirmPassword = "";
 
-  void validatePasswordd(
+  TextEditingController tc_1 = TextEditingController();
+  TextEditingController tc_2 = TextEditingController();
+  TextEditingController tc_3 = TextEditingController();
+
+  void validatePassword(
       String oldPassword, String newPassword, String confirmPassword) {
-    if (password != oldPassword) {
+    if (oldPassword == "" || newPassword == "" || confirmPassword == "") {
+      print("the password can't be empty");
+    } else if (password != oldPassword) {
       print("the old password doesn't match");
-    }
-    if (newPassword != confirmPassword) {
-      print("New password and the confirm password are different");
-    }
-    if (oldPassword == newPassword) {
+    } else if (newPassword != confirmPassword) {
+      print(
+          "please make sure that the New password and the confirm password are same");
+    } else if (oldPassword == newPassword) {
       print("Old password and new password are same");
     }
   }
 
-  TextField textBox() {
-    return TextField(
-      obscureText: !visible,
-      decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(10),
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-        ),
-        suffixIcon: IconButton(
-          icon:
-              Icon(visible ? Icons.visibility : Icons.visibility_off_outlined),
-          onPressed: () {
-            setState(() {
-              visible = !visible;
-            });
-          },
-        ),
-      ),
-    );
-  }
+  // TextField textBox(visible) {
+  //   return TextField(
+  //     obscureText: !visible,
+  //     decoration: InputDecoration(
+  //       contentPadding: const EdgeInsets.all(10),
+  //       border: const OutlineInputBorder(
+  //         borderRadius: BorderRadius.all(Radius.circular(8)),
+  //       ),
+  //       suffixIcon: IconButton(
+  //         icon:
+  //             Icon(visible ? Icons.visibility : Icons.visibility_off_outlined),
+  //         onPressed: () {
+  //           setState(() {
+  //             visible = !visible;
+  //           });
+  //         },
+  //       ),
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -70,33 +80,105 @@ class ChangePassword extends State<PasswordChangeScreen> {
                 child: Icon(Icons.notifications, size: 30, color: Colors.white))
           ],
         ),
-        drawer: main_drawer(),
+        drawer: main_drawer(context),
         body: ListView(
           padding: const EdgeInsets.all(16),
           children: [
             const Text(
               "Old Password ",
               style: TextStyle(fontSize: 18),
+              // oldPassword=tc.text;
             ),
-            textBox(),
+            // textBox(visible_1),
+            TextField(
+              controller: tc_1,
+              obscureText: !visible_1,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(10),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(visible_1
+                      ? Icons.visibility
+                      : Icons.visibility_off_outlined),
+                  onPressed: () {
+                    setState(() {
+                      visible_1 = !visible_1;
+                    });
+                  },
+                ),
+              ),
+            ),
+
             const Padding(padding: EdgeInsets.all(8.0)),
-            // TextBox.fromLTRBD(2, 3, 2, 3,TextDirection.ltr),
+
             const Text(
               "New Password",
               style: TextStyle(fontSize: 18),
             ),
-            textBox(),
+            // textBox(visible_2),
+            TextField(
+              obscureText: !visible_2,
+              controller: tc_2,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(10),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(visible_2
+                      ? Icons.visibility
+                      : Icons.visibility_off_outlined),
+                  onPressed: () {
+                    setState(() {
+                      visible_2 = !visible_2;
+                    });
+                  },
+                ),
+              ),
+            ),
+
             const Padding(padding: EdgeInsets.all(8.0)),
 
             const Text(
               "Confirm New Password",
               style: TextStyle(fontSize: 18),
             ),
-            textBox(),
+            // textBox(visible_3),
+            TextField(
+              obscureText: !visible_3,
+              controller: tc_3,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(10),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(visible_3
+                      ? Icons.visibility
+                      : Icons.visibility_off_outlined),
+                  onPressed: () {
+                    setState(() {
+                      visible_3 = !visible_3;
+                    });
+                  },
+                ),
+              ),
+            ),
+
             const Padding(padding: EdgeInsets.all(10.0)),
 
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // print(tc.text);
+                  oldPassword = tc_1.text;
+                  newPassword = tc_2.text;
+                  confirmPassword = tc_3.text;
+
+                  validatePassword(oldPassword, newPassword, confirmPassword);
+                  // tc.clear();
+                },
                 style: const ButtonStyle(
                   padding: WidgetStatePropertyAll(
                       EdgeInsets.only(top: 10, bottom: 10)),
