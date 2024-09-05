@@ -30,7 +30,8 @@ class ChangePassword extends State<PasswordChangeScreen> {
     } else if (password != oldPassword) {
       print("the old password doesn't match");
     } else if (newPassword != confirmPassword) {
-      print("New password and the confirm password are different");
+      print(
+          "please make sure that the New password and the confirm password are same");
     } else if (oldPassword == newPassword) {
       print("Old password and new password are same");
     }
@@ -79,7 +80,7 @@ class ChangePassword extends State<PasswordChangeScreen> {
                 child: Icon(Icons.notifications, size: 30, color: Colors.white))
           ],
         ),
-        drawer: main_drawer(),
+        drawer: main_drawer(context),
         body: ListView(
           padding: const EdgeInsets.all(16),
           children: [

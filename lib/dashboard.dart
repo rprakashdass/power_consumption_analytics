@@ -4,15 +4,15 @@ import 'package:power_consumption_analytics/drawer.dart';
 // ignore: must_be_immutable, use_key_in_widget_constructors
 class DashboardScreen extends StatelessWidget {
   // const DashboardScreen({super.key});
-  String tc='12345';
-  String toc='16789';
-  String lw='1256';
-  String ln='245';
+  String tc = '12345';
+  String toc = '16789';
+  String lw = '1256';
+  String ln = '245';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255,1,202,199),
+        backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         title: const Text('MD CONTROL'),
         actions: [
           IconButton(
@@ -21,7 +21,7 @@ class DashboardScreen extends StatelessWidget {
           ),
         ],
       ),
-      drawer: main_drawer(),
+      drawer: main_drawer(context),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -35,10 +35,9 @@ class DashboardScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Row(
                 children: [
-                lastcom('Last communicated date\n 2024-09-03 11:33 AM'),
+                  lastcom('Last communicated date\n 2024-09-03 11:33 AM'),
                 ],
               ),
-              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -58,8 +57,9 @@ class DashboardScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Row(
                 children: [
-              _buildConsumptionCard('Today Consumption',tc, 'Average Consumption\nof Last Week: $lw kWh'),
-              _buildConsumptionCard('Total Consumption', '$toc kWh', ''),
+                  _buildConsumptionCard('Today Consumption', tc,
+                      'Average Consumption\nof Last Week: $lw kWh'),
+                  _buildConsumptionCard('Total Consumption', '$toc kWh', ''),
                 ],
               ),
               const SizedBox(height: 10),
@@ -72,21 +72,25 @@ class DashboardScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-            BottomNavigationBarItem(label:'home', icon:Icon(Icons.home)),
-            BottomNavigationBarItem(label:'thunder', icon:Icon(Icons.flash_on)),
-          ],backgroundColor:const Color.fromARGB(255, 1, 202, 200),),
-         
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(label: 'home', icon: Icon(Icons.home)),
+          BottomNavigationBarItem(label: 'thunder', icon: Icon(Icons.flash_on)),
+        ],
+        backgroundColor: const Color.fromARGB(255, 1, 202, 200),
+      ),
     );
   }
 
   Widget _buildStatusCard(String title, String status) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(40,5,40,5),
+        padding: const EdgeInsets.fromLTRB(40, 5, 40, 5),
         child: Column(
           children: [
-            Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text(title,
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 4),
             Text(status, style: const TextStyle(fontSize: 16)),
           ],
@@ -95,32 +99,34 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget lastcom(test)
-  {
-    return Card(
-      
-      child: Padding(padding: const EdgeInsets.fromLTRB(100, 5, 110, 5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(test),
-          const SizedBox(height: 10),
-        
-        ],
-      ),
-      ),
-    );
-  }
-  Widget _buildConsumptionCard(String title, String value, String subtitle) {
+  Widget lastcom(test) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(10,5,10,5),
+        padding: const EdgeInsets.fromLTRB(100, 5, 110, 5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text(test),
+            const SizedBox(height: 10),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildConsumptionCard(String title, String value, String subtitle) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title,
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
-            Text(value, style: const TextStyle(fontSize: 24, color: Colors.teal)),
+            Text(value,
+                style: const TextStyle(fontSize: 24, color: Colors.teal)),
             const SizedBox(height: 8),
             if (subtitle.isNotEmpty) Text(subtitle),
           ],
@@ -133,22 +139,28 @@ class DashboardScreen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        Text(title,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         _buildVoltageRow('R', '247.58', 'Y', '246.94', 'B', '250.02'),
       ],
     );
   }
+
   Widget _buildVoltageInfo() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Divider(),
-        const Center(child: Text('Average LN Volts: 248.18 V', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+        const Center(
+            child: Text('Average LN Volts: 248.18 V',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
         const SizedBox(height: 8),
         _buildVoltageRow('R', '247.58', 'Y', '246.94', 'B', '250.02'),
         const SizedBox(height: 16),
         const Divider(),
-        const Center(child: Text('Average LL Volts: 429.85 V', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+        const Center(
+            child: Text('Average LL Volts: 429.85 V',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
         const SizedBox(height: 8),
         _buildVoltageRow('RY', '430.93', 'YB', '428.26', 'BR', '430.37'),
         const Divider(),
@@ -156,7 +168,8 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildVoltageRow(String label1, String value1, String label2, String value2, String label3, String value3) {
+  Widget _buildVoltageRow(String label1, String value1, String label2,
+      String value2, String label3, String value3) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -171,7 +184,8 @@ class DashboardScreen extends StatelessWidget {
     return Column(
       children: [
         Text(label, style: const TextStyle(fontSize: 16)),
-        Text(value, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        Text(value,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
       ],
     );
   }

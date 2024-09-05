@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+
 class Read_FilterDialogContent extends StatefulWidget {
+  const Read_FilterDialogContent({super.key});
+
   @override
-  Read_FilterDialogContentState createState() => Read_FilterDialogContentState();
+  Read_FilterDialogContentState createState() =>
+      Read_FilterDialogContentState();
 }
+
 class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
   DateTime? fromDate;
   DateTime? toDate;
@@ -14,16 +19,15 @@ class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-    
         children: [
           // From Date Picker
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('From Date'),
+            title: const Text('From Date'),
             subtitle: Text(fromDate != null
                 ? '${fromDate!.toLocal()}'.split(' ')[0]
                 : 'Select From Date'),
-            trailing: Icon(Icons.calendar_today),
+            trailing: const Icon(Icons.calendar_today),
             onTap: () async {
               DateTime? date = await showDatePicker(
                 context: context,
@@ -34,18 +38,17 @@ class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
               if (date != null) {
                 setState(() {
                   fromDate = date;
-                  
                 });
               }
             },
           ),
           // To Date Picker
           ListTile(
-            title: Text('To Date'),
+            title: const Text('To Date'),
             subtitle: Text(toDate != null
                 ? '${toDate!.toLocal()}'.split(' ')[0]
                 : 'Select To Date'),
-            trailing: Icon(Icons.calendar_today),
+            trailing: const Icon(Icons.calendar_today),
             onTap: () async {
               DateTime? date = await showDatePicker(
                 context: context,
@@ -57,7 +60,7 @@ class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
                 setState(() {
                   toDate = date;
                   if (toDate != null && toDate!.isBefore(date)) {
-                  toDate = null;
+                    toDate = null;
                   }
                 });
               }
@@ -65,11 +68,11 @@ class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
           ),
           // From Time Picker
           ListTile(
-            title: Text('From Time'),
+            title: const Text('From Time'),
             subtitle: Text(fromTime != null
                 ? fromTime!.format(context)
                 : 'Select From Time'),
-            trailing: Icon(Icons.access_time),
+            trailing: const Icon(Icons.access_time),
             onTap: () async {
               TimeOfDay? time = await showTimePicker(
                 context: context,
@@ -84,11 +87,10 @@ class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
           ),
           // To Time Picker
           ListTile(
-            title: Text('To Time'),
-            subtitle: Text(toTime != null
-                ? toTime!.format(context)
-                : 'Select To Time'),
-            trailing: Icon(Icons.access_time),
+            title: const Text('To Time'),
+            subtitle: Text(
+                toTime != null ? toTime!.format(context) : 'Select To Time'),
+            trailing: const Icon(Icons.access_time),
             onTap: () async {
               TimeOfDay? time = await showTimePicker(
                 context: context,
@@ -108,12 +110,15 @@ class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
 }
 
 class Consumption_FilterDialogContent extends StatefulWidget {
+  const Consumption_FilterDialogContent({super.key});
+
   @override
-  Consumption_FilterDialogContentState createState() => Consumption_FilterDialogContentState();
+  Consumption_FilterDialogContentState createState() =>
+      Consumption_FilterDialogContentState();
 }
 
-
-class Consumption_FilterDialogContentState extends State<Consumption_FilterDialogContent> {
+class Consumption_FilterDialogContentState
+    extends State<Consumption_FilterDialogContent> {
   DateTime? fromDate;
   DateTime? toDate;
 
@@ -122,16 +127,15 @@ class Consumption_FilterDialogContentState extends State<Consumption_FilterDialo
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-    
         children: [
           // From Date Picker
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('From Date'),
+            title: const Text('From Date'),
             subtitle: Text(fromDate != null
                 ? '${fromDate!.toLocal()}'.split(' ')[0]
                 : 'Select From Date'),
-            trailing: Icon(Icons.calendar_today),
+            trailing: const Icon(Icons.calendar_today),
             onTap: () async {
               DateTime? date = await showDatePicker(
                 context: context,
@@ -142,18 +146,17 @@ class Consumption_FilterDialogContentState extends State<Consumption_FilterDialo
               if (date != null) {
                 setState(() {
                   fromDate = date;
-                  
                 });
               }
             },
           ),
           // To Date Picker
           ListTile(
-            title: Text('To Date'),
+            title: const Text('To Date'),
             subtitle: Text(toDate != null
                 ? '${toDate!.toLocal()}'.split(' ')[0]
                 : 'Select To Date'),
-            trailing: Icon(Icons.calendar_today),
+            trailing: const Icon(Icons.calendar_today),
             onTap: () async {
               DateTime? date = await showDatePicker(
                 context: context,
@@ -165,7 +168,7 @@ class Consumption_FilterDialogContentState extends State<Consumption_FilterDialo
                 setState(() {
                   toDate = date;
                   if (toDate != null && toDate!.isBefore(date)) {
-                  toDate = null;
+                    toDate = null;
                   }
                 });
               }
