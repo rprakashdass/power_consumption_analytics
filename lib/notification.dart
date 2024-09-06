@@ -17,7 +17,7 @@ class _NotiFyState extends State<NotiFy> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white, size: 30),
+          iconTheme: const IconThemeData(color: Colors.white, size: 30),
           backgroundColor: const Color.fromARGB(255, 1, 202, 199),
           title: const Center(child: Text('Notification Settings')),
         ),

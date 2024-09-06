@@ -27,12 +27,12 @@ Drawer main_drawer(BuildContext context) {
                 ),
               ),
               ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.account_circle,
                   size: 30,
                   color: Color.fromARGB(255, 233, 233, 221),
                 ),
-                title: Text(
+                title: const Text(
                   "Admin",
                   style: TextStyle(fontSize: 30, color: Colors.white),
                 ),
@@ -80,13 +80,13 @@ Drawer main_drawer(BuildContext context) {
                         MaterialPageRoute(
                             builder: (context) => device_manager()));
                   }),
-              ListTile(
-                leading: const Icon(
+              const ListTile(
+                leading: Icon(
                   Icons.people,
                   size: 25,
                   color: Color.fromARGB(255, 200, 236, 33),
                 ),
-                title: const Text(
+                title: Text(
                   'User',
                   style: TextStyle(
                       fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
@@ -107,12 +107,15 @@ Drawer main_drawer(BuildContext context) {
                         fontSize: 20,
                         color: Color.fromARGB(255, 250, 250, 250)),
                   ),
+          
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const ReportMenu()));
-                  }),
+                  },
+                  trailing: const Icon(Icons.chevron_right_rounded,color: Colors.white,),
+                  ),
 
               ListTile(
                   leading: const Icon(

@@ -21,6 +21,7 @@ class device_manager extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
           IconButton(

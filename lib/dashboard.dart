@@ -12,11 +12,12 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         title: const Text('MD CONTROL'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications,color: Colors.white,),
             onPressed: () {},
           ),
         ],
@@ -30,7 +31,7 @@ class DashboardScreen extends StatelessWidget {
             children: [
               const Text(
                 'Dashboard',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
               Row(
@@ -74,8 +75,8 @@ class DashboardScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(label: 'home', icon: Icon(Icons.home)),
-          BottomNavigationBarItem(label: 'thunder', icon: Icon(Icons.flash_on)),
+          BottomNavigationBarItem(label: 'home', icon: Icon(Icons.home,color: Colors.black,),),
+          BottomNavigationBarItem(label: 'thunder', icon: Icon(Icons.flash_on,color: Colors.black,)),
         ],
         backgroundColor: const Color.fromARGB(255, 1, 202, 200),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
-import 'package:power_consumption_analytics/drawer.dart';
+// import 'package:power_consumption_analytics/drawer.dart';
 
 class consumption_report extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
@@ -23,6 +23,7 @@ class consumption_report extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
           IconButton(
@@ -32,7 +33,6 @@ class consumption_report extends StatelessWidget {
           ),
         ],
       ),
-      drawer: main_drawer(context),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -157,8 +157,8 @@ class consumption_report extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Consumption Report Filter'),
-          content: Consumption_FilterDialogContent(),
+          title: const Text('Consumption Report Filter',style: TextStyle(fontSize: 18)),
+          content: const Consumption_FilterDialogContent(),
           actions: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

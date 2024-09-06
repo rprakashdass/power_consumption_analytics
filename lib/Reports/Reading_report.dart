@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
-import 'package:power_consumption_analytics/drawer.dart';
-
+// import 'package:power_consumption_analytics/drawer.dart';
 class reading_report extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
     {
@@ -48,17 +47,7 @@ class reading_report extends StatelessWidget {
       "lvAlert": "NO",
       "hvAlert": "NO"
     },
-    {
-      "date": "02-09-2024 20:09:18",
-      "received": "14202.11",
-      "consumed": "0",
-      "pin1": "OFF",
-      "pin2": "OFF",
-      "pin3": "OFF",
-      "pfAlert": "YES",
-      "lvAlert": "NO",
-      "hvAlert": "NO"
-    },
+    
     // Add more data here...
   ];
 
@@ -68,6 +57,7 @@ class reading_report extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
           IconButton(
@@ -80,7 +70,7 @@ class reading_report extends StatelessWidget {
           ),
         ],
       ),
-      drawer: main_drawer(context),
+      // drawer: main_drawer(context),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -199,8 +189,8 @@ class reading_report extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Reading Report Filter'), // Title of the dialog
-          content: Read_FilterDialogContent(), // Your custom content widget
+          title: const Text('Reading Report Filter',style: TextStyle(fontSize: 18)), // Title of the dialog
+          content: const Read_FilterDialogContent(), // Your custom content widget
           actions: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
