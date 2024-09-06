@@ -73,13 +73,26 @@ class DashboardScreen extends StatelessWidget {
           ),
         ),
       ),
+      
       bottomNavigationBar: BottomNavigationBar(
+    
         items: const [
-          BottomNavigationBarItem(label: 'home', icon: Icon(Icons.home,color: Colors.black,),),
-          BottomNavigationBarItem(label: 'thunder', icon: Icon(Icons.flash_on,color: Colors.black,)),
+          
+          BottomNavigationBarItem(label: '', icon: Padding(
+            padding: EdgeInsets.fromLTRB(10,10,10,0),
+            child: Icon(Icons.home,size: 30,),
+          )),
+          BottomNavigationBarItem(label: '', icon: Padding(
+            padding: EdgeInsets.fromLTRB(10,10,10,0),
+            child: Icon(Icons.flash_on,size: 30,),
+          )),
         ],
         backgroundColor: const Color.fromARGB(255, 1, 202, 200),
+        selectedItemColor: Colors.yellow,
+        unselectedItemColor: Colors.white,
+        
       ),
+    
     );
   }
 
@@ -147,6 +160,10 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
+
+
+
+
   Widget _buildVoltageInfo() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,6 +182,20 @@ class DashboardScreen extends StatelessWidget {
         const SizedBox(height: 8),
         _buildVoltageRow('RY', '430.93', 'YB', '428.26', 'BR', '430.37'),
         const Divider(),
+        
+        const Center(
+            child: Text('Average Amps: 372.03 A',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+        const SizedBox(height: 8),
+        _buildVoltageRow('R', '430.93', 'Y', '428.26', 'B', '430.37'),
+        const Divider(),
+        
+        const Center(
+            child: Text('Average PF: 0.91 ',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+        const SizedBox(height: 8),
+        _buildVoltageRow('R', '430.93', 'Y', '428.26', 'R', '430.37'),
+
       ],
     );
   }
@@ -175,8 +206,8 @@ class DashboardScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _buildVoltageDetail(label1, value1),
-        _buildVoltageDetail(label2, value2),
-        _buildVoltageDetail(label3, value3),
+        buildVoltageDetailforyellow(label2, value2),
+        buildVoltageDetailforblue(label3, value3),
       ],
     );
   }
@@ -184,9 +215,51 @@ class DashboardScreen extends StatelessWidget {
   Widget _buildVoltageDetail(String label, String value) {
     return Column(
       children: [
-        Text(label, style: const TextStyle(fontSize: 16)),
+        // Text(label)
+        Stack(
+          children: [
+            const Icon(Icons.circle_rounded,color: Color.fromARGB(237, 236, 20, 5),size: 30,),
+            Positioned(bottom:5,left:7,child:Center(child:Text(label,style: const TextStyle(color: Colors.white),))),
+
+          ],
+        ),
+        // Text(label, style: const TextStyle(fontSize: 16,color: Color.fromARGB(255, 47, 10, 255))),
         Text(value,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold,)),
+      ],
+    );
+  }
+   Widget buildVoltageDetailforyellow(String label, String value) {
+    return Column(
+      children: [
+        // Text(label)
+        Stack(
+          children: [
+            const Icon(Icons.circle_rounded,color: Color.fromARGB(252, 245, 221, 3),size: 30,),
+            Positioned(bottom:5,left:7,child:Center(child:Text(label,style: const TextStyle(color: Colors.white)))),
+
+          ],
+        ),
+        // Text(label, style: const TextStyle(fontSize: 16,color: Color.fromARGB(255, 47, 10, 255))),
+        Text(value,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold,)),
+      ],
+    );
+  }
+   Widget buildVoltageDetailforblue(String label, String value) {
+    return Column(
+      children: [
+        // Text(label)
+        Stack(
+          children: [
+            const Icon(Icons.circle_rounded,color: Color.fromARGB(255, 9, 133, 234),size: 30,),
+            Positioned(bottom:5,left:7,child:Center(child:Text(label,style: const TextStyle(color: Colors.white)))),
+
+          ],
+        ),
+        // Text(label, style: const TextStyle(fontSize: 16,color: Color.fromARGB(255, 47, 10, 255))),
+        Text(value,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold,)),
       ],
     );
   }
