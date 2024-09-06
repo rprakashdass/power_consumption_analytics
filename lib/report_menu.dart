@@ -47,16 +47,16 @@ class ReportMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.notifications, color: Colors.yellow),
-            title: Text('Notification Report'),
+            leading: const Icon(Icons.notifications, color: Colors.yellow),
+            title: const Text('Notification Report'),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => notification_report()));
             },
           ),
           ListTile(
-            leading: Icon(Icons.warning, color: Colors.yellow),
-            title: Text('Alert Report',),
+            leading: const Icon(Icons.warning, color: Colors.yellow),
+            title: const Text('Alert Report',),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => alert_report()));

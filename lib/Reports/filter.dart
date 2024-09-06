@@ -250,8 +250,8 @@ class History_FilterDialogContentState
               trailing: DropdownButton<String>(
                 items: list_items.map((String dropdownStringItem) {
                   return DropdownMenuItem(
-                    child: Text(dropdownStringItem,style: TextStyle(color: Colors.black38),),
                     value: dropdownStringItem,
+                    child: Text(dropdownStringItem,style: TextStyle(color: Colors.black38),),
                   );
                 }).toList(),
                 onChanged: (String? newItem) {
@@ -342,8 +342,8 @@ class Notification_FilterDialogContentState
               trailing: DropdownButton<String>(
                 items: list_items.map((String dropdownStringItem) {
                   return DropdownMenuItem(
-                    child: Text(dropdownStringItem,style: TextStyle(color: Colors.black38),),
                     value: dropdownStringItem,
+                    child: Text(dropdownStringItem,style: TextStyle(color: Colors.black38),),
                   );
                 }).toList(),
                 onChanged: (String? newItem) {
