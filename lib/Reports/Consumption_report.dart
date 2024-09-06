@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:power_consumption_analytics/Reports/consumption_view.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
-// import 'package:power_consumption_analytics/drawer.dart';
 
 class consumption_report extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
@@ -75,7 +75,8 @@ class consumption_report extends StatelessWidget {
                   final item = data[index];
                   return GestureDetector(
                       onTap: () {
-                        print("Consumption tap");
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => consumption_view()));
                       },
                       child: Card(
                         margin: const EdgeInsets.symmetric(vertical: 8.0),
