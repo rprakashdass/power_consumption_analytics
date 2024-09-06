@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/Reports/Device.dart';
 import 'package:power_consumption_analytics/account_file.dart';
 import 'package:power_consumption_analytics/change_password.dart';
+import 'package:power_consumption_analytics/createUser.dart';
 import 'package:power_consumption_analytics/dashboard.dart';
 import 'package:power_consumption_analytics/notification.dart';
 import 'package:power_consumption_analytics/report_menu.dart';
 import 'package:power_consumption_analytics/subscription.dart';
+import 'package:power_consumption_analytics/createUser.dart';
 
 // ignore: non_constant_identifier_names
 Drawer main_drawer(BuildContext context) {
@@ -80,42 +82,45 @@ Drawer main_drawer(BuildContext context) {
                         MaterialPageRoute(
                             builder: (context) => device_manager()));
                   }),
-              const ListTile(
-                leading: Icon(
-                  Icons.people,
-                  size: 25,
-                  color: Color.fromARGB(255, 200, 236, 33),
-                ),
-                title: Text(
-                  'User',
-                  style: TextStyle(
-                      fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
-                ),
-                // onTap: () {
-                //   Navigator.push(context,
-                //       MaterialPageRoute(builder: (context) => AccountPage()));
-                // }
-              ),
               ListTile(
                   leading: const Icon(
-                    Icons.note_alt,
+                    Icons.people,
+                    size: 25,
                     color: Color.fromARGB(255, 200, 236, 33),
                   ),
                   title: const Text(
-                    'Report',
+                    'User',
                     style: TextStyle(
                         fontSize: 20,
                         color: Color.fromARGB(255, 250, 250, 250)),
                   ),
-          
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ReportMenu()));
-                  },
-                  trailing: const Icon(Icons.chevron_right_rounded,color: Colors.white,),
-                  ),
+                            builder: (context) => const Createuser()));
+                  }),
+              ListTile(
+                leading: const Icon(
+                  Icons.note_alt,
+                  color: Color.fromARGB(255, 200, 236, 33),
+                ),
+                title: const Text(
+                  'Report',
+                  style: TextStyle(
+                      fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ReportMenu()));
+                },
+                trailing: const Icon(
+                  Icons.chevron_right_rounded,
+                  color: Colors.white,
+                ),
+              ),
 
               ListTile(
                   leading: const Icon(
