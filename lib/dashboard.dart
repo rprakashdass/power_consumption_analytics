@@ -5,7 +5,7 @@ import 'package:power_consumption_analytics/drawer.dart';
 class DashboardScreen extends StatelessWidget {
   // const DashboardScreen({super.key});
   String tc = '12345';
-  String toc = '16789';
+  String toc = '16.0';
   String lw = '1256';
   String ln = '245';
   @override
@@ -51,16 +51,16 @@ class DashboardScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildStatusCard('Relay1', 'OFF'),
-                  _buildStatusCard('Relay2', 'OFF'),
+                  buildReadyCard('Relay1', 'OFF'),
+                  buildReadyCard('Relay2', 'OFF'),
                 ],
               ),
               const SizedBox(height: 10),
               Row(
                 children: [
-                  _buildConsumptionCard('Today Consumption', tc,
+                  _buildConsumptionCard('Today Consumption', '$tc kWh',
                       'Average Consumption\nof Last Week: $lw kWh'),
-                  _buildConsumptionCard('Total Consumption', '$toc kWh', ''),
+                  _buildConsumptionCard('Total Consumption', '$toc (kWh)', '          \n  '),
                 ],
               ),
               const SizedBox(height: 10),
@@ -131,7 +131,35 @@ class DashboardScreen extends StatelessWidget {
   Widget _buildConsumptionCard(String title, String value, String subtitle) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+        padding: const EdgeInsets.fromLTRB(10, 9, 10, 9),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title,
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(50,10,20,10),
+              child: Icon(Icons.speed_rounded,color: Colors.amber,size: 50,),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30,10,20,10),
+              child: Text(value,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(height: 8,width: 8,),
+            if (subtitle.isNotEmpty) Text(subtitle),
+          ],
+        ),
+      ),
+    );
+  }
+
+ Widget buildReadyCard(String title, String value) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(62, 5, 62, 5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -140,14 +168,13 @@ class DashboardScreen extends StatelessWidget {
                     const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
             Text(value,
-                style: const TextStyle(fontSize: 24, color: Colors.teal)),
-            const SizedBox(height: 8),
-            if (subtitle.isNotEmpty) Text(subtitle),
+                style: const TextStyle(fontSize: 18)),
           ],
         ),
       ),
     );
   }
+
 
   Widget _buildDetailsRow(String title) {
     return Column(
