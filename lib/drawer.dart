@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/Reports/Device.dart';
 import 'package:power_consumption_analytics/account_file.dart';
 import 'package:power_consumption_analytics/change_password.dart';
-import 'package:power_consumption_analytics/createUser.dart';
 import 'package:power_consumption_analytics/dashboard.dart';
 import 'package:power_consumption_analytics/notification.dart';
 import 'package:power_consumption_analytics/report_menu.dart';
 import 'package:power_consumption_analytics/subscription.dart';
-import 'package:power_consumption_analytics/createUser.dart';
+import 'package:power_consumption_analytics/user.dart';
 
 // ignore: non_constant_identifier_names
 Drawer main_drawer(BuildContext context) {
@@ -95,10 +94,8 @@ Drawer main_drawer(BuildContext context) {
                         color: Color.fromARGB(255, 250, 250, 250)),
                   ),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Createuser()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const User()));
                   }),
               ListTile(
                 leading: const Icon(
