@@ -75,7 +75,6 @@ class DashboardScreen extends StatelessWidget {
       ),
       
       bottomNavigationBar: BottomNavigationBar(
-    
         items: const [
           
           BottomNavigationBarItem(label: '', icon: Padding(
@@ -84,7 +83,8 @@ class DashboardScreen extends StatelessWidget {
           )),
           BottomNavigationBarItem(label: '', icon: Padding(
             padding: EdgeInsets.fromLTRB(10,10,10,0),
-            child: Icon(Icons.flash_on,size: 30,),
+            child: Icon(Icons.flash_on,size: 30),
+            
           )),
         ],
         backgroundColor: const Color.fromARGB(255, 1, 202, 200),
