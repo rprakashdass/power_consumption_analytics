@@ -6,6 +6,7 @@ import 'package:power_consumption_analytics/dashboard.dart';
 import 'package:power_consumption_analytics/notification.dart';
 import 'package:power_consumption_analytics/report_menu.dart';
 import 'package:power_consumption_analytics/subscription.dart';
+import 'package:power_consumption_analytics/user.dart';
 
 // ignore: non_constant_identifier_names
 Drawer main_drawer(BuildContext context) {
@@ -30,7 +31,7 @@ Drawer main_drawer(BuildContext context) {
                 leading: const Icon(
                   Icons.account_circle,
                   size: 30,
-                  color: Color.fromARGB(255, 233, 233, 221),
+                  color: Color.fromARGB(255, 200, 236, 33),
                 ),
                 title: const Text(
                   "Admin",
@@ -80,7 +81,7 @@ Drawer main_drawer(BuildContext context) {
                         MaterialPageRoute(
                             builder: (context) => device_manager()));
                   }),
-              const ListTile(
+              ListTile(
                 leading: Icon(
                   Icons.people,
                   size: 25,
@@ -91,31 +92,32 @@ Drawer main_drawer(BuildContext context) {
                   style: TextStyle(
                       fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
                 ),
-                // onTap: () {
-                //   Navigator.push(context,
-                //       MaterialPageRoute(builder: (context) => AccountPage()));
-                // }
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => User()));
+                },
               ),
               ListTile(
-                  leading: const Icon(
-                    Icons.note_alt,
-                    color: Color.fromARGB(255, 200, 236, 33),
-                  ),
-                  title: const Text(
-                    'Report',
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 250, 250, 250)),
-                  ),
-          
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ReportMenu()));
-                  },
-                  trailing: const Icon(Icons.chevron_right_rounded,color: Colors.white,),
-                  ),
+                leading: const Icon(
+                  Icons.note_alt,
+                  color: Color.fromARGB(255, 200, 236, 33),
+                ),
+                title: const Text(
+                  'Report',
+                  style: TextStyle(
+                      fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ReportMenu()));
+                },
+                trailing: const Icon(
+                  Icons.chevron_right_rounded,
+                  color: Colors.white,
+                ),
+              ),
 
               ListTile(
                   leading: const Icon(

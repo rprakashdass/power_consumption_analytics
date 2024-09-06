@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
 
 class history_report extends StatelessWidget {
-  history_report({super.key});
+  const history_report({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class history_report extends StatelessWidget {
                 ),
               ],
             ),
-        Padding(padding: EdgeInsets.fromLTRB(100, 250, 100, 100),
+        const Padding(padding: EdgeInsets.fromLTRB(100, 250, 100, 100),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

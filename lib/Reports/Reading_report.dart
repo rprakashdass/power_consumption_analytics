@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:power_consumption_analytics/Reports/Read_View.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
 // import 'package:power_consumption_analytics/drawer.dart';
 class reading_report extends StatelessWidget {
@@ -114,7 +115,8 @@ class reading_report extends StatelessWidget {
                   final item = data[index];
                   return GestureDetector(
                       onTap: () {
-                        print("Tapped");
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => reading_view()));
                       },
                       child: Card(
                         margin: const EdgeInsets.symmetric(vertical: 8.0),
