@@ -28,6 +28,8 @@ class consumption_view extends StatelessWidget {
     }
   ];
 
+   consumption_view({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +108,7 @@ class ReportItem extends StatelessWidget {
   final String value;
   final bool isAlert;
 
-  const ReportItem({required this.title, required this.value, this.isAlert = false});
+  const ReportItem({super.key, required this.title, required this.value, this.isAlert = false});
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +142,7 @@ class ReportItem extends StatelessWidget {
 class SectionTitle extends StatelessWidget {
   final String title;
 
-  const SectionTitle({required this.title});
+  const SectionTitle({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

@@ -43,7 +43,7 @@ class ReportMenu extends StatelessWidget {
             title: const Text('History Report'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => history_report()));
+                  MaterialPageRoute(builder: (context) => const history_report()));
             },
           ),
           ListTile(
@@ -51,7 +51,7 @@ class ReportMenu extends StatelessWidget {
             title: const Text('Notification Report'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => notification_report()));
+                  MaterialPageRoute(builder: (context) => const notification_report()));
             },
           ),
           ListTile(
@@ -59,7 +59,7 @@ class ReportMenu extends StatelessWidget {
             title: const Text('Alert Report',),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => alert_report()));
+                  MaterialPageRoute(builder: (context) => const alert_report()));
             },
           ),
         ],

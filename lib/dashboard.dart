@@ -14,7 +14,7 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
-        title: const Text('MD CONTROL'),
+        title: const Center(child: Text('MD CONTROL',style: TextStyle(color: Colors.white),)),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications,color: Colors.white,),

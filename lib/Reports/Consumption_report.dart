@@ -76,7 +76,7 @@ class consumption_report extends StatelessWidget {
                   return GestureDetector(
                       onTap: () {
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => consumption_view()));
+                          MaterialPageRoute(builder: (context) =>  consumption_view()));
                       },
                       child: Card(
                         margin: const EdgeInsets.symmetric(vertical: 8.0),

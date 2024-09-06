@@ -251,7 +251,7 @@ class History_FilterDialogContentState
                 items: list_items.map((String dropdownStringItem) {
                   return DropdownMenuItem(
                     value: dropdownStringItem,
-                    child: Text(dropdownStringItem,style: TextStyle(color: Colors.black38),),
+                    child: Text(dropdownStringItem,style: const TextStyle(color: Colors.black38),),
                   );
                 }).toList(),
                 onChanged: (String? newItem) {
@@ -343,7 +343,7 @@ class Notification_FilterDialogContentState
                 items: list_items.map((String dropdownStringItem) {
                   return DropdownMenuItem(
                     value: dropdownStringItem,
-                    child: Text(dropdownStringItem,style: TextStyle(color: Colors.black38),),
+                    child: Text(dropdownStringItem,style: const TextStyle(color: Colors.black38),),
                   );
                 }).toList(),
                 onChanged: (String? newItem) {
