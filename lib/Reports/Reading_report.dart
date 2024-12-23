@@ -1,12 +1,14 @@
-
 import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/Reports/Read_View.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
+
 // import 'package:power_consumption_analytics/drawer.dart';
 class reading_report extends StatelessWidget {
   final List<dynamic>? data_1;
-
-  final List<Map<String, dynamic>> data= [
+  double p1 = 0.0;
+  double p2 = 0.0;
+  double p3 = 0.0;
+  final List<Map<String, dynamic>> data = [
     {
       "date": "02-09-2024 20:11:18",
       "received": "14202.81",
@@ -51,25 +53,23 @@ class reading_report extends StatelessWidget {
       "lvAlert": "NO",
       "hvAlert": "NO"
     },
-    
+
     // Add more data here...
   ];
-  
-   reading_report({super.key, this.data_1});
+
+  reading_report({super.key, this.data_1});
 
   // reading_report({super.key,required this.data_1});
   @override
   Widget build(BuildContext context) {
     print("vanthuruchu da");
-    print(data_1![0]['created_at']?? 'heloooo');
+    print(data_1![0]['created_at'] ?? 'heloooo');
     print("avlovthan");
     return Scaffold(
-      
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
-         
           IconButton(
             icon: const Icon(
               Icons.notifications,
@@ -119,15 +119,24 @@ class reading_report extends StatelessWidget {
             const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
-              
                 itemCount: data.length,
                 itemBuilder: (context, index) {
                   final item = data[index];
-                  // print(item['field1']);
+                  p1 = double.parse(data_1![index]['field3']);
+                  p2 = double.parse(data_1![index]['field4']);
+                  p3 = double.parse(data_1![index]['field5']);
+                  String hvalert = "NO";
+                  String lvalert = "NO";
+                  String pfalert = "NO";
+                  if (p1 > 240 || p2 > 240 || p3 > 240) hvalert = 'YES';
+                  if (p1 < 210 || p2 < 210 || p3 < 210) lvalert = 'YES';
+                  // print("my pin data ${data_1![index]['field3'].toString()}");
                   return GestureDetector(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => reading_view()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => reading_view()));
                       },
                       child: Card(
                         margin: const EdgeInsets.symmetric(vertical: 8.0),
@@ -136,10 +145,11 @@ class reading_report extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // Text("Think speak data: ${data_1[1]['field1'].toString()??'hello'}"),
                               Text(
                                 // "Date: ${item['date']}",
                                 "Date: ${data_1![index]['field1']}",
+                                // "Pin 1: ${data_1![index]['pin_1'].toString()}",
+
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold),
                               ),
@@ -160,11 +170,19 @@ class reading_report extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("Pin1: ${item['pin1']}"),
-                                  Text("Pin1: ${item['field1']}"),
-                                  Text("PF Alert: ${item['pfAlert']}",
+                                  Text(
+                                    double.tryParse(data_1![index]['field3'] ??
+                                                    '0') !=
+                                                null &&
+                                            double.parse(
+                                                    data_1![index]['field3']!) >
+                                                0
+                                        ? 'Pin 1: ON'
+                                        : 'Pin 1: OFF',
+                                  ),
+                                  Text("PF ALERT: $pfalert",
                                       style: TextStyle(
-                                        color: item['pfAlert'] == 'YES'
+                                        color: pfalert == 'YES'
                                             ? Colors.red
                                             : Colors.black,
                                       )),
@@ -175,9 +193,22 @@ class reading_report extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("Pin2: ${item['pin2']}"),
-                                  // Text("Pin2: ${item['field1']}"),
-                                  Text("LV Alert: ${item['lvAlert']} "),
+                                  Text(
+                                    double.tryParse(data_1![index]['field4'] ??
+                                                    '0') !=
+                                                null &&
+                                            double.parse(
+                                                    data_1![index]['field4']!) >
+                                                0
+                                        ? 'Pin 2: ON'
+                                        : 'Pin 2: OFF',
+                                  ),
+                                  Text("LF ALERT: $lvalert",
+                                      style: TextStyle(
+                                        color: lvalert == 'YES'
+                                            ? Colors.red
+                                            : Colors.black,
+                                      )),
                                 ],
                               ),
                               const SizedBox(height: 4),
@@ -185,9 +216,22 @@ class reading_report extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("Pin3: ${item['pin3']}"),
-                                  // Text("Pin3: ${item['pin3']}"),
-                                  Text("HV Alert: ${item['hvAlert']} "),
+                                  Text(
+                                    double.tryParse(data_1![index]['field5'] ??
+                                                    '0') !=
+                                                null &&
+                                            double.parse(
+                                                    data_1![index]['field5']!) >
+                                                0
+                                        ? 'Pin 3: ON'
+                                        : 'Pin 3: OFF',
+                                  ), // Text("Pin3: ${item['pin3']}"),
+                                  Text("HV ALERT: $hvalert",
+                                      style: TextStyle(
+                                        color: hvalert == 'YES'
+                                            ? Colors.red
+                                            : Colors.black,
+                                      )),
                                 ],
                               ),
                             ],
@@ -208,8 +252,10 @@ class reading_report extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Reading Report Filter',style: TextStyle(fontSize: 18)), // Title of the dialog
-          content: const Read_FilterDialogContent(), // Your custom content widget
+          title: const Text('Reading Report Filter',
+              style: TextStyle(fontSize: 18)), // Title of the dialog
+          content:
+              const Read_FilterDialogContent(), // Your custom content widget
           actions: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
