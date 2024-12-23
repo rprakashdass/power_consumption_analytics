@@ -18,13 +18,13 @@ class HomeController extends GetxController {
     allowadmintoLogin(){
     print(adminEmailctr.text);
     print(adminpasswardctr.text);
-    if(adminEmailctr.text =='Admin123@gmail.com' && adminpasswardctr.text =='123'){
+    if(adminEmailctr.text =='admin123@gmail.com' && adminpasswardctr.text =='123'){
       print("here came bro");
      
       Get.to(DashboardScreen());
     }
     else{
-      Get.snackbar('Error', 'email and passward are missmatched. give the currect email and passward');
+      Get.snackbar('Error', 'email and passward are missmatched. give the currect email and passward',colorText: Colors.red);
     }
   }
 

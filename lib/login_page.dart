@@ -24,7 +24,7 @@ class AdminLoginPage extends StatelessWidget {
             const Text('Welcome',
             style: TextStyle(fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple
+            color: const Color.fromARGB(255, 1, 202, 199),
             ),
             ),
             const SizedBox(height: 20,),
@@ -59,7 +59,7 @@ class AdminLoginPage extends StatelessWidget {
                 ctrl.allowadmintoLogin();
               },style:ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
-                backgroundColor: Colors.deepPurple,
+                backgroundColor: const Color.fromARGB(255, 1, 202, 199),
               ) ,child: const Text('Login') ),
               // TextButton(onPressed: (){ 
                

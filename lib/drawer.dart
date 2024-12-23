@@ -5,6 +5,7 @@ import 'package:power_consumption_analytics/account_file.dart';
 import 'package:power_consumption_analytics/change_password.dart';
 import 'package:power_consumption_analytics/dashboard.dart';
 import 'package:power_consumption_analytics/home_controller/Home_controller.dart';
+import 'package:power_consumption_analytics/login_page.dart';
 import 'package:power_consumption_analytics/notification.dart';
 import 'package:power_consumption_analytics/report_menu.dart';
 import 'package:power_consumption_analytics/subscription.dart';
@@ -22,10 +23,11 @@ Widget main_drawer(BuildContext context) {
               const DrawerHeader(
                 child: Center(
                   child: Text(
-                    'M-POWER',
+                    'POWER CONTROL',
                     style: TextStyle(
-                      fontSize: 33,
+                      fontSize: 30,
                       color: Color.fromARGB(255, 233, 233, 221),
+                      fontWeight: FontWeight.bold
                     ),
                   ),
                 ),
@@ -187,7 +189,7 @@ Widget main_drawer(BuildContext context) {
                       fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
                 ),
                onTap: (){
-                // ctrl.testcall();
+                Get.to(AdminLoginPage());
                },
               ),
             ],

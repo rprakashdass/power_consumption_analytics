@@ -28,15 +28,16 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+      
         leading: IconButton(
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => DashboardScreen()));
             },
-            icon: const Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back,color: Colors.white,)),
         title: const Text(
           'Profile',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25,color: Colors.white),
         ),
         actions: const [
           Padding(
@@ -44,10 +45,11 @@ class AccountPage extends StatelessWidget {
               child: Icon(
                 Icons.notifications,
                 size: 30,
+                color: Colors.white,
               ))
         ],
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(250, 78, 177, 199),
+        backgroundColor: const Color.fromARGB(255, 1, 202, 199),
       ),
       body: ListView(
         // color: Color.fromARGB(134, 252, 252, 252),

@@ -94,9 +94,9 @@ class SpeedometerPainter extends CustomPainter {
 }
 
 class DashboardScreen extends StatelessWidget {
-  String tc = '80';  // Today's Consumption value
+  int tc = 30;  // Today's Consumption value
   String toc = '16.0';
-  String lw = '127';
+  int lw = 98;
   String ln = '245';
 
   DashboardScreen({super.key});
@@ -107,7 +107,7 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
-        title: const Center(child: Text('MD CONTROL', style: TextStyle(color: Colors.white))),
+        title: const Center(child: Text('POWER SYSTEM', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold))),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications, color: Colors.white),
@@ -153,9 +153,9 @@ class DashboardScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   Row(
                     children: [
-                      _buildConsumptionCard('Today Consumption', '$tc kWh','Average Consumption\nof Last Week: $lw kWh'),
-                      _buildConsumptionCard('Total Consumption', ' 78 kWh','Average Consumption\nof Last Month: 75 kWh'),
-                      
+                      _buildConsumptionCard('Today Consumption', '${(tc).toString()} kWh','Average Consumption\nof Last Week: ${lw.toString()} kWh'),
+                      _buildConsumptionCard2('Total Consumption', ' ${(tc+30).toString()} kWh','Average Consumption\nof Last Month: ${(lw+40).toString()} kWh'),
+                         
                       // _buildConsumptionCardsimple('Total Consumption', '$toc (kWh)', '  \n  '),
                     ],
                   ),
@@ -171,30 +171,43 @@ class DashboardScreen extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            label: '',
-            icon: Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Icon(Icons.home, size: 30),
-            ),
+    
+      bottomNavigationBar: const BottomAppBar(
+        color: Color.fromARGB(255, 1, 202, 200),
+        // shape: CircularNotchedRectangle(),
+        notchMargin:8.0,
+        height: 60,
+        child: SizedBox(
+          height: 29,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.home,color: Colors.white,size: 35,)
+            ],
           ),
-          BottomNavigationBarItem(
-            label: '',
-            
-            icon: Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              
-              child: Icon(Icons.flash_on, size: 30),
-            ),
-           
-          ),
-        ],
-        backgroundColor: const Color.fromARGB(255, 1, 202, 200),
-        selectedItemColor: Colors.yellow,
-        unselectedItemColor: Colors.white,
+        ),
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       label: '',
+      //       icon: Padding(
+      //         padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+      //         child: Icon(Icons.home, size: 30),
+      //       ),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       label: '',
+            
+      //       icon: Text(''),
+            
+           
+      //     ),
+      //   ],
+      //   backgroundColor: const Color.fromARGB(255, 1, 202, 200),
+      //   selectedItemColor: Colors.yellow,
+      //   unselectedItemColor: Colors.white,
+      // ),
     );
   }
 
@@ -258,7 +271,7 @@ class DashboardScreen extends StatelessWidget {
   Widget _buildConsumptionCard(String title, String value, String subtitle) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 10, 10, 10),
+        padding: const EdgeInsets.fromLTRB(12, 10, 15, 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -266,7 +279,7 @@ class DashboardScreen extends StatelessWidget {
                 style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
             const SizedBox(height: 80),
             Center(
-              child: Speedometer(value: double.parse(tc)), 
+              child: Speedometer(value: 30.0), //double.parse(50.toString())
             ),
             Center(
               child: Padding(
@@ -282,7 +295,33 @@ class DashboardScreen extends StatelessWidget {
       ),
     );
   }
-
+Widget _buildConsumptionCard2(String title, String value, String subtitle) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(12, 10, 15, 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title,
+                style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 80),
+            Center(
+              child: Speedometer(value: 60.0), //double.parse(50.toString())
+            ),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(35.0, 10.0, 10.0, 10.0),
+                child: Text(value,
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ),
+            ),
+            const SizedBox(height: 8, width: 8),
+            if (subtitle.isNotEmpty) Text(subtitle),
+          ],
+        ),
+      ),
+    );
+  }
   Widget buildReadyCard(String title, String value) {
     return Card(
       child: Padding(
