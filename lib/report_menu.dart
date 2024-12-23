@@ -1,10 +1,11 @@
 // report_menu.dart
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:power_consumption_analytics/Reports/Alert.dart';
 import 'package:power_consumption_analytics/Reports/Consumption_report.dart';
 import 'package:power_consumption_analytics/Reports/History.dart';
 import 'package:power_consumption_analytics/Reports/Notification.dart';
-import 'package:power_consumption_analytics/Reports/Reading_report.dart';
+import 'package:power_consumption_analytics/home_controller/Home_controller.dart';
 // ignore: unused_import
 import 'main.dart';
 
@@ -13,7 +14,8 @@ class ReportMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GetBuilder<HomeController>(builder: (ctrl){
+           return Scaffold(
       appBar: AppBar(
         title: const Text('Report Menu',style: TextStyle(color: Colors.white),),
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
@@ -25,8 +27,9 @@ class ReportMenu extends StatelessWidget {
             leading: const Icon(Icons.assignment, color: Colors.yellow),
             title: const Text('Reading Report'),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => reading_report()));
+              ctrl.testcall();
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) => reading_report()));
             },
           ),
           ListTile(
@@ -65,5 +68,7 @@ class ReportMenu extends StatelessWidget {
         ],
       ),
     );
+    });
+   
   }
 }

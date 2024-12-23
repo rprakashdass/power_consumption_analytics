@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-// import 'package:power_consumption_analytics/Reports/Reading_report.dart';
+import 'package:get/get.dart';
 import 'package:power_consumption_analytics/dashboard.dart';
+import 'package:power_consumption_analytics/home_controller/Home_controller.dart';
 // import 'package:power_consumption_analytics/Reports/Consumption_report.dart';
 // import 'package:power_consumption_analytics/change_password.dart';
 
 void main() {
+  Get.put(HomeController());
   runApp(const MyApp());
 }
 
@@ -13,9 +15,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      // ignore: unnecessary_const
+     
+      // home: AdminLoginPage(),
       home: DashboardScreen(),
     );
   }

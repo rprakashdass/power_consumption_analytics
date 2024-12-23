@@ -1,9 +1,12 @@
+
 import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/Reports/Read_View.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
 // import 'package:power_consumption_analytics/drawer.dart';
 class reading_report extends StatelessWidget {
-  final List<Map<String, dynamic>> data = [
+  final List<dynamic>? data_1;
+
+  final List<Map<String, dynamic>> data= [
     {
       "date": "02-09-2024 20:11:18",
       "received": "14202.81",
@@ -51,16 +54,22 @@ class reading_report extends StatelessWidget {
     
     // Add more data here...
   ];
+  
+   reading_report({super.key, this.data_1});
 
-  reading_report({super.key});
-
+  // reading_report({super.key,required this.data_1});
   @override
   Widget build(BuildContext context) {
+    print("vanthuruchu da");
+    print(data_1![0]['created_at']?? 'heloooo');
+    print("avlovthan");
     return Scaffold(
+      
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
+         
           IconButton(
             icon: const Icon(
               Icons.notifications,
@@ -110,9 +119,11 @@ class reading_report extends StatelessWidget {
             const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
+              
                 itemCount: data.length,
                 itemBuilder: (context, index) {
                   final item = data[index];
+                  // print(item['field1']);
                   return GestureDetector(
                       onTap: () {
                         Navigator.push(context,
@@ -125,8 +136,10 @@ class reading_report extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              // Text("Think speak data: ${data_1[1]['field1'].toString()??'hello'}"),
                               Text(
-                                "Date: ${item['date']}",
+                                // "Date: ${item['date']}",
+                                "Date: ${data_1![index]['field1']}",
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold),
                               ),
@@ -137,6 +150,7 @@ class reading_report extends StatelessWidget {
                                 children: [
                                   Text("Received (kWh): ${item['received']}"),
                                   Text("Consumed (kWh): ${item['consumed']}"),
+                                  // Text("Consumed (kWh): ${item['field1']}"),
                                 ],
                               ),
                               const SizedBox(height: 8),
@@ -147,6 +161,7 @@ class reading_report extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text("Pin1: ${item['pin1']}"),
+                                  Text("Pin1: ${item['field1']}"),
                                   Text("PF Alert: ${item['pfAlert']}",
                                       style: TextStyle(
                                         color: item['pfAlert'] == 'YES'
@@ -161,6 +176,7 @@ class reading_report extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text("Pin2: ${item['pin2']}"),
+                                  // Text("Pin2: ${item['field1']}"),
                                   Text("LV Alert: ${item['lvAlert']} "),
                                 ],
                               ),
@@ -170,6 +186,7 @@ class reading_report extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text("Pin3: ${item['pin3']}"),
+                                  // Text("Pin3: ${item['pin3']}"),
                                   Text("HV Alert: ${item['hvAlert']} "),
                                 ],
                               ),

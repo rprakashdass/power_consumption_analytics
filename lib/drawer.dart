@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:power_consumption_analytics/Reports/Device.dart';
 import 'package:power_consumption_analytics/account_file.dart';
 import 'package:power_consumption_analytics/change_password.dart';
 import 'package:power_consumption_analytics/dashboard.dart';
+import 'package:power_consumption_analytics/home_controller/Home_controller.dart';
 import 'package:power_consumption_analytics/notification.dart';
 import 'package:power_consumption_analytics/report_menu.dart';
 import 'package:power_consumption_analytics/subscription.dart';
 import 'package:power_consumption_analytics/user.dart';
 
 // ignore: non_constant_identifier_names
-Drawer main_drawer(BuildContext context) {
-  return Drawer(
+Widget main_drawer(BuildContext context) {
+  return GetBuilder<HomeController>(builder: (ctrl){
+      return Drawer(
       child: Container(
           color: const Color.fromARGB(255, 1, 202, 200),
           // child: Material(
@@ -82,19 +85,19 @@ Drawer main_drawer(BuildContext context) {
                             builder: (context) => device_manager()));
                   }),
               ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.people,
                   size: 25,
                   color: Color.fromARGB(255, 200, 236, 33),
                 ),
-                title: Text(
+                title: const Text(
                   'User',
                   style: TextStyle(
                       fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
                 ),
                 onTap: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => User()));
+                      context, MaterialPageRoute(builder: (context) => const User()));
                 },
               ),
               ListTile(
@@ -171,19 +174,26 @@ Drawer main_drawer(BuildContext context) {
                         MaterialPageRoute(
                             builder: (context) =>
                                 const PasswordChangeScreen()));
-                  }),
-              const ListTile(
-                leading: Icon(
+                  }
+                  ),
+              ListTile(
+                leading: const Icon(
                   Icons.logout,
                   color: Color.fromARGB(255, 200, 236, 33),
                 ),
-                title: Text(
+                title: const Text(
                   'Logout',
                   style: TextStyle(
                       fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
                 ),
+               onTap: (){
+                // ctrl.testcall();
+               },
               ),
             ],
             // ),
-          )));
+          ))
+          );
+  });
+  
 }

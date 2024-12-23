@@ -18,7 +18,7 @@ class _ToggleCardState extends State<ToggleCard> {
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.all(10),
-        width: 174,
+        width: 160,
         height: 120,
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
