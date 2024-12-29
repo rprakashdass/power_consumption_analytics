@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:power_consumption_analytics/widgets/notifications_history.dart';
 
-class reading_view extends StatelessWidget {
+class ReadView extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
     {
       "date": "02-09-2024 20:11:18",
@@ -40,7 +42,7 @@ class reading_view extends StatelessWidget {
     }
   ];
 
-   reading_view({super.key});
+   ReadView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,9 @@ class reading_view extends StatelessWidget {
               size: 30,
             ),
             color: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(const NotificationsHistory());
+            },
           ),
         ],
       ),

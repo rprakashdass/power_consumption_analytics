@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:power_consumption_analytics/createUser.dart';
+import 'package:power_consumption_analytics/createuser.dart';
+import 'package:power_consumption_analytics/widgets/main_dashboard.dart';
 
 class User extends StatelessWidget {
   const User({super.key});
@@ -8,19 +9,28 @@ class User extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white, size: 30),
-        backgroundColor: const Color.fromARGB(255, 1, 202, 199),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MainDashboard()));
+            },
+            icon: const Icon(Icons.arrow_back),color: Colors.white,),
         title: const Text(
-          'Users',
-          style: TextStyle(color: Colors.white),
+          'User',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 25),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications, size: 30),
-            color: Colors.white,
-            onPressed: () {},
-          ),
+        actions: const [
+          Padding(
+              padding: EdgeInsets.only(right: 15),
+              child: Icon(
+                Icons.notifications,
+                size: 30,
+                color: Colors.white,
+              ))
         ],
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 1, 202, 199),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

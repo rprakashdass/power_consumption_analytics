@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:power_consumption_analytics/drawer.dart';
+import 'package:power_consumption_analytics/widgets/notifications_history.dart';
 
 class device_manager extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
@@ -21,13 +23,15 @@ class device_manager extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Devices',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+        title: const Text('Devices',style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
           IconButton(
-            onPressed: () {},
             icon: const Icon(Icons.notifications, size: 30),
+            onPressed: () {
+              Get.to(const NotificationsHistory());
+            },
             color: Colors.white,
           )
         ],

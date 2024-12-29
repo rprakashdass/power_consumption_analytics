@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:power_consumption_analytics/Reports/Read_View.dart';
+import 'package:get/get.dart';
+import 'package:power_consumption_analytics/Reports/read_View.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
+import 'package:power_consumption_analytics/widgets/notifications_history.dart';
 
 // import 'package:power_consumption_analytics/drawer.dart';
-class reading_report extends StatelessWidget {
+
+class ReadingReport extends StatelessWidget { //reading_report
   final List<dynamic>? data_1;
   double p1 = 0.0;
   double p2 = 0.0;
@@ -57,16 +60,16 @@ class reading_report extends StatelessWidget {
     // Add more data here...
   ];
 
-  reading_report({super.key, this.data_1});
+  ReadingReport({super.key, this.data_1});
 
   // reading_report({super.key,required this.data_1});
   @override
   Widget build(BuildContext context) {
-    print("vanthuruchu da");
-    print(data_1![0]['created_at'] ?? 'heloooo');
-    print("avlovthan");
+   
+   
     return Scaffold(
       appBar: AppBar(
+        title:const Text("Reading Report",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
@@ -76,7 +79,9 @@ class reading_report extends StatelessWidget {
               size: 30,
             ),
             color: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(const NotificationsHistory());
+            },
           ),
         ],
       ),
@@ -119,7 +124,7 @@ class reading_report extends StatelessWidget {
             const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
-                itemCount: data.length,
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   final item = data[index];
                   p1 = double.parse(data_1![index]['field3']);
@@ -136,7 +141,7 @@ class reading_report extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => reading_view()));
+                                builder: (context) => ReadView()));
                       },
                       child: Card(
                         margin: const EdgeInsets.symmetric(vertical: 8.0),
@@ -255,7 +260,7 @@ class reading_report extends StatelessWidget {
           title: const Text('Reading Report Filter',
               style: TextStyle(fontSize: 18)), // Title of the dialog
           content:
-              const Read_FilterDialogContent(), // Your custom content widget
+              const ReadFilterDialogContent(), // Your custom content widget
           actions: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

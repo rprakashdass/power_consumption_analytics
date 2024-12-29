@@ -19,7 +19,7 @@ class _NotiFyState extends State<NotiFy> {
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white, size: 30),
           backgroundColor: const Color.fromARGB(255, 1, 202, 199),
-          title: const Center(child: Text('Notification Settings')),
+          title: const Center(child: Text('Notification Settings',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)),
         ),
         drawer: main_drawer(context),
         body: Padding(

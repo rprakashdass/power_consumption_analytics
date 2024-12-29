@@ -28,6 +28,7 @@ class Subscription extends StatelessWidget {
                 Icons.notifications,
                 size: 30,
                 color: Colors.white,
+                
               ))
         ],
       ),

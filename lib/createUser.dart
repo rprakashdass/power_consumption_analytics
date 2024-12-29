@@ -1,7 +1,9 @@
-// ignore_for_file: non_constant_identifier_names
+
 
 import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/dashboard.dart';
+import 'package:power_consumption_analytics/user.dart';
+import 'package:power_consumption_analytics/widgets/main_dashboard.dart';
 
 // ignore: must_be_immutable
 class Createuser extends StatefulWidget {
@@ -39,9 +41,11 @@ class createUser extends State<Createuser> {
         leading: IconButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DashboardScreen()));
+                  MaterialPageRoute(builder: (context) => const User()));
             },
-            icon: const Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back),
+            color: Colors.white,
+            ),
         title: const Text(
           'New user',
           style: TextStyle(
@@ -53,10 +57,11 @@ class createUser extends State<Createuser> {
               child: Icon(
                 Icons.notifications,
                 size: 30,
+                color: Colors.white,
               ))
         ],
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(250, 78, 177, 199),
+        backgroundColor: const Color.fromARGB(255, 1, 202, 199),
       ),
       body: ListView(
         // color: Color.fromARGB(134, 252, 252, 252),

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:power_consumption_analytics/Reports/Device.dart';
+import 'package:power_consumption_analytics/Reports/device.dart';
 import 'package:power_consumption_analytics/account_file.dart';
 import 'package:power_consumption_analytics/change_password.dart';
 import 'package:power_consumption_analytics/dashboard.dart';
-import 'package:power_consumption_analytics/home_controller/Home_controller.dart';
+import 'package:power_consumption_analytics/home_controller/home_controller.dart';
 import 'package:power_consumption_analytics/login_page.dart';
 import 'package:power_consumption_analytics/notification.dart';
 import 'package:power_consumption_analytics/report_menu.dart';
 import 'package:power_consumption_analytics/subscription.dart';
 import 'package:power_consumption_analytics/user.dart';
+import 'package:power_consumption_analytics/widgets/main_dashboard.dart';
 
 // ignore: non_constant_identifier_names
 Widget main_drawer(BuildContext context) {
@@ -63,7 +64,7 @@ Widget main_drawer(BuildContext context) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DashboardScreen()));
+                            builder: (context) => const MainDashboard()));
                   }),
 
               // ),
@@ -189,7 +190,7 @@ Widget main_drawer(BuildContext context) {
                       fontSize: 20, color: Color.fromARGB(255, 250, 250, 250)),
                 ),
                onTap: (){
-                Get.to(AdminLoginPage());
+                _dialogBuilder(context);
                },
               ),
             ],
@@ -199,3 +200,38 @@ Widget main_drawer(BuildContext context) {
   });
   
 }
+Future<void> _dialogBuilder(BuildContext context) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Are you sure to logout'),
+          content: const Text(
+            'if you log out your account \n'
+            ' you shoud log in again for your narmal use'
+          ),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('No'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Yes'),
+              onPressed: () {
+                Get.to(const AdminLoginPage());
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+

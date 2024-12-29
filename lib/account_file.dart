@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:power_consumption_analytics/dashboard.dart';
+import 'package:power_consumption_analytics/widgets/main_dashboard.dart';
 
 // ignore: must_be_immutable
 class AccountPage extends StatelessWidget {
@@ -32,7 +32,7 @@ class AccountPage extends StatelessWidget {
         leading: IconButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DashboardScreen()));
+                  MaterialPageRoute(builder: (context) => const MainDashboard()));
             },
             icon: const Icon(Icons.arrow_back,color: Colors.white,)),
         title: const Text(
@@ -46,6 +46,7 @@ class AccountPage extends StatelessWidget {
                 Icons.notifications,
                 size: 30,
                 color: Colors.white,
+                
               ))
         ],
         centerTitle: true,

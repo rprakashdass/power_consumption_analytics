@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:power_consumption_analytics/widgets/notifications_history.dart';
 
 class consumption_view extends StatelessWidget {
   final List<Map<String, dynamic>> data = [
@@ -51,7 +53,9 @@ class consumption_view extends StatelessWidget {
               size: 30,
             ),
             color: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(const NotificationsHistory());
+            },
           ),
         ],
       ),

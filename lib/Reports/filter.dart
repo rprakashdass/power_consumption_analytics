@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Read_FilterDialogContent extends StatefulWidget {
-  const Read_FilterDialogContent({super.key});
+class ReadFilterDialogContent extends StatefulWidget {
+  const ReadFilterDialogContent({super.key});
 
   @override
-  Read_FilterDialogContentState createState() =>
-      Read_FilterDialogContentState();
+  ReadFilterDialogContentState createState() =>
+      ReadFilterDialogContentState();
 }
 
-class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
+class ReadFilterDialogContentState extends State<ReadFilterDialogContent> {
   DateTime? fromDate;
   DateTime? toDate;
   TimeOfDay? fromTime;
@@ -109,16 +109,16 @@ class Read_FilterDialogContentState extends State<Read_FilterDialogContent> {
   }
 }
 
-class Consumption_FilterDialogContent extends StatefulWidget {
-  const Consumption_FilterDialogContent({super.key});
+class ConsumptionFilterDialogContent extends StatefulWidget {
+  const ConsumptionFilterDialogContent({super.key});
 
   @override
-  Consumption_FilterDialogContentState createState() =>
-      Consumption_FilterDialogContentState();
+  ConsumptionFilterDialogContentState createState() =>
+      ConsumptionFilterDialogContentState();
 }
 
-class Consumption_FilterDialogContentState
-    extends State<Consumption_FilterDialogContent> {
+class ConsumptionFilterDialogContentState
+    extends State<ConsumptionFilterDialogContent> {
   DateTime? fromDate;
   DateTime? toDate;
 
@@ -179,16 +179,16 @@ class Consumption_FilterDialogContentState
     );
   }
 }
-class History_FilterDialogContent extends StatefulWidget {
-  const History_FilterDialogContent({super.key});
+class HistoryFilterDialogContent extends StatefulWidget {
+  const HistoryFilterDialogContent({super.key});
 
   @override
-  History_FilterDialogContentState createState() =>
-      History_FilterDialogContentState();
+  HistoryFilterDialogContentState createState() =>
+      HistoryFilterDialogContentState();
 }
 
-class History_FilterDialogContentState
-    extends State<History_FilterDialogContent> {
+class HistoryFilterDialogContentState
+    extends State<HistoryFilterDialogContent> {
   DateTime? fromDate;
   DateTime? toDate;
   var dropdownValue="Select Type";
@@ -271,16 +271,16 @@ void _DropItemSelected(String newelement){
     }
 }
 
-class Notification_FilterDialogContent extends StatefulWidget {
-  const Notification_FilterDialogContent({super.key});
+class NotificationFilterDialogContent extends StatefulWidget {
+  const NotificationFilterDialogContent({super.key});
 
   @override
-  Notification_FilterDialogContentState createState() =>
-      Notification_FilterDialogContentState();
+  NotificationFilterDialogContentState createState() =>
+      NotificationFilterDialogContentState();
 }
 
-class Notification_FilterDialogContentState
-    extends State<Notification_FilterDialogContent> {
+class NotificationFilterDialogContentState
+    extends State<NotificationFilterDialogContent> {
   DateTime? fromDate;
   DateTime? toDate;
   var dropdownValue="Select Type";
@@ -364,16 +364,16 @@ void _DropItemSelected(String newelement){
 }
 
 
-class Alert_FilterDialogContent extends StatefulWidget {
-  const Alert_FilterDialogContent({super.key});
+class AlertFilterDialogContent extends StatefulWidget {
+  const AlertFilterDialogContent({super.key});
 
   @override
-  Alert_FilterDialogContentState createState() =>
-      Alert_FilterDialogContentState();
+  AlertFilterDialogContentState createState() =>
+      AlertFilterDialogContentState();
 }
 
-class Alert_FilterDialogContentState
-    extends State<Alert_FilterDialogContent> {
+class AlertFilterDialogContentState
+    extends State<AlertFilterDialogContent> {
   DateTime? fromDate;
   DateTime? toDate;
 

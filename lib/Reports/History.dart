@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
 
-class history_report extends StatelessWidget {
-  const history_report({super.key});
+class HistoryReport extends StatelessWidget {
+  const HistoryReport({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title:const Text("Report History",style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
@@ -70,7 +71,7 @@ showDialog(
   builder: (context) {
     return AlertDialog(
       title: const Text('History Report Filter',style: TextStyle(fontSize: 18)),
-      content: const History_FilterDialogContent(),
+      content: const HistoryFilterDialogContent(),
       actions: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,11 +1,11 @@
 // report_menu.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:power_consumption_analytics/Reports/Alert.dart';
-import 'package:power_consumption_analytics/Reports/Consumption_report.dart';
-import 'package:power_consumption_analytics/Reports/History.dart';
-import 'package:power_consumption_analytics/Reports/Notification.dart';
-import 'package:power_consumption_analytics/home_controller/Home_controller.dart';
+import 'package:power_consumption_analytics/Reports/alert.dart';
+import 'package:power_consumption_analytics/Reports/consumption_report.dart';
+import 'package:power_consumption_analytics/Reports/history.dart';
+import 'package:power_consumption_analytics/Reports/notification.dart';
+import 'package:power_consumption_analytics/home_controller/home_controller.dart';
 // ignore: unused_import
 import 'main.dart';
 
@@ -38,7 +38,7 @@ class ReportMenu extends StatelessWidget {
             onTap: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => consumption_report()));
+                  MaterialPageRoute(builder: (context) => ConsumptionReport()));
             },
           ),
           ListTile(
@@ -46,7 +46,7 @@ class ReportMenu extends StatelessWidget {
             title: const Text('History Report'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const history_report()));
+                  MaterialPageRoute(builder: (context) => const HistoryReport()));
             },
           ),
           ListTile(
@@ -54,7 +54,7 @@ class ReportMenu extends StatelessWidget {
             title: const Text('Notification Report'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const notification_report()));
+                  MaterialPageRoute(builder: (context) => const NotificationReport()));
             },
           ),
           ListTile(
@@ -62,7 +62,7 @@ class ReportMenu extends StatelessWidget {
             title: const Text('Alert Report',),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const alert_report()));
+                  MaterialPageRoute(builder: (context) => const AlertReport()));
             },
           ),
         ],

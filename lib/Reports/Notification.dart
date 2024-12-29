@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:power_consumption_analytics/Reports/filter.dart';
+import 'package:power_consumption_analytics/widgets/notifications_history.dart';
 
-class notification_report extends StatelessWidget {
-  const notification_report({super.key});
+class NotificationReport extends StatelessWidget {
+  const NotificationReport({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         title:const Text("Notification Report",style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         iconTheme: const IconThemeData(color: Colors.white, size: 30),
         backgroundColor: const Color.fromARGB(255, 1, 202, 199),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications, size: 30),
             color: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(const NotificationsHistory());
+            },
           ),
         ],
       ),
@@ -70,7 +75,7 @@ showDialog(
   builder: (context) {
     return AlertDialog(
       title: const Text('Notification Report Filter',style: TextStyle(fontSize: 18)),
-      content: const Notification_FilterDialogContent(),
+      content: const NotificationFilterDialogContent(),
       actions: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
